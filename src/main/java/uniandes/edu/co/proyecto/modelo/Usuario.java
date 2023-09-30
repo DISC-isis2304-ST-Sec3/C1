@@ -1,6 +1,7 @@
 package uniandes.edu.co.proyecto.modelo;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -18,17 +19,28 @@ public class Usuario {
     private String documento;
 
     private String email;
-    private String tipoDocumento;
+    
+    
+    public enum TipoDocumento {
+        CEDULA, PASAPORTE, TARJETA_IDENTIDAD
+    }
 
-    public Usuario(String nombre, String apellido, Integer edad, String email, String tipoDocumento){
+    private TipoDocumento tipoDocumento;
+   
+    private Rol rol;    
+
+    public Usuario(String nombre, String apellido, Integer edad, String email, TipoDocumento tipoDocumento, Rol rol){
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
         this.email = email;
         this.tipoDocumento = tipoDocumento;
+        this.rol = rol;
     }
+
     public Usuario()
     {;}
+
     public String getNombre() {
         return nombre;
     }
@@ -44,9 +56,14 @@ public class Usuario {
     public String getEmail() {
         return email;
     }
-    public String getTipoDocumento() {
+    public TipoDocumento getTipoDocumento() {
         return tipoDocumento;
     }
+    public Rol getRol() {
+        return rol;
+    }
+
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -62,9 +79,11 @@ public class Usuario {
     public void setEmail(String email) {
         this.email = email;
     }
-    public void setTipoDocumento(String tipoDocumento) {
+    public void setTipoDocumento(TipoDocumento tipoDocumento) {
         this.tipoDocumento = tipoDocumento;
     }
-
+    public void setRol(Rol rol) {
+        this.rol = rol;
+    }
     
 }
