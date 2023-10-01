@@ -2,18 +2,19 @@ package uniandes.edu.co.proyecto.modelo;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
-import java.util.Date;
+import java.time.LocalDateTime;
+
 
 @Entity
 @Table(name="spa")
 public class Spa extends Servicio {
 
     private Integer capacidad;
-    private Date apertura;
-    private Date cierre;
+    private LocalDateTime apertura;
+    private LocalDateTime cierre;
     private Integer franja;
 
-    public Spa(Integer capacidad, Date apertura, Date cierre, Integer franja) {
+    public Spa(Integer capacidad, LocalDateTime apertura, LocalDateTime cierre, Integer franja) {
         this.capacidad = capacidad;
         this.apertura = apertura;
         this.cierre = cierre;
@@ -27,11 +28,11 @@ public class Spa extends Servicio {
         return capacidad;
     }
 
-    public Date getApertura() {
+    public LocalDateTime getApertura() {
         return apertura;
     }
 
-    public Date getCierre() {
+    public LocalDateTime getCierre() {
         return cierre;
     }
 
@@ -43,11 +44,11 @@ public class Spa extends Servicio {
         this.capacidad = capacidad;
     }
 
-    public void setApertura(Date apertura) {
+    public void setApertura(LocalDateTime apertura) {
         this.apertura = apertura;
     }
 
-    public void setCierre(Date cierre) {
+    public void setCierre(LocalDateTime cierre) {
         this.cierre = cierre;
     }
 
