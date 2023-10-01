@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="reservas_estancias")
-public class ReservasEstancia {
+public class ReservaEstancia {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,13 +20,13 @@ public class ReservasEstancia {
     private String fechaFin;
     private Integer cantidadHuespes;
 
-    public ReservasEstancia(String fechaInicio, String fechaFin, Integer cantidadHuespes) {
+    public ReservaEstancia(String fechaInicio, String fechaFin, Integer cantidadHuespes) {
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
         this.cantidadHuespes = cantidadHuespes;
     }
 
-    public ReservasEstancia() 
+    public ReservaEstancia() 
     {;}
 
     public Integer getId() {

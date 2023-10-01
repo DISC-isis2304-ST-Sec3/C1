@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 public class PlanDeConsumo {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String nombre;
     
     
@@ -20,7 +20,6 @@ public class PlanDeConsumo {
     private String valor;
 
     public PlanDeConsumo( String descuento, String minimasNoches, String valor) {
-
         this.descuento = descuento;
         this.minimasNoches = minimasNoches;
         this.valor = valor;

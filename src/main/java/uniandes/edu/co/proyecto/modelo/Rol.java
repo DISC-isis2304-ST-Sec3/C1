@@ -1,51 +1,34 @@
 package uniandes.edu.co.proyecto.modelo;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="rol")
+@Table(name = "roles")
 public class Rol {
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String nombre;
-
-    public enum TipoRol {
-        CLIENTE, RECEPCIONISTA, CAJERO, ADMINISTRADOR, GERENTE, HUESPED,
+    enum TipoRol{
+        CLIENTE,RECEPCIONISTA,CAJERO,ADMINISTRADOR,GERENTE,HUESPED
     }
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Enumerated(EnumType.STRING)
     private TipoRol tipoRol;
-
-    public Rol(String nombre, TipoRol tipoRol){
-        this.nombre = nombre;
-
+    public Rol(TipoRol tipoRol) {
         this.tipoRol = tipoRol;
     }
-
     public Rol()
     {;}
-
-    public String getNombre() {
-        return nombre;
-    }
-
     public TipoRol getTipoRol() {
         return tipoRol;
     }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public void setTipoRol(TipoRol tipoRol) {
         this.tipoRol = tipoRol;
     }
-
     
-    
-
 }
+
