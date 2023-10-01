@@ -1,7 +1,6 @@
 package uniandes.edu.co.proyecto.modelo.servicios;
 
 import jakarta.persistence.*;
-import uniandes.edu.co.proyecto.modelo.servicios.Servicio;
 
 @Entity
 @Table(name = "salones")

@@ -1,9 +1,6 @@
 package uniandes.edu.co.proyecto.modelo.hospedaje;
 
 import jakarta.persistence.*;
-import uniandes.edu.co.proyecto.modelo.dotacion.Dotacion;
-
-import java.util.List;
 
 
 @Entity

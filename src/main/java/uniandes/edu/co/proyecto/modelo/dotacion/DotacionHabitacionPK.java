@@ -1,9 +1,8 @@
-package uniandes.edu.co.proyecto.modelo;
+package uniandes.edu.co.proyecto.modelo.dotacion;
 
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import uniandes.edu.co.proyecto.modelo.dotacion.Dotacion;
 import uniandes.edu.co.proyecto.modelo.hospedaje.TipoHabitacion;
 
 import java.io.Serializable;
