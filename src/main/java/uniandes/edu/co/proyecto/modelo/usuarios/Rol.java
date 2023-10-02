@@ -7,29 +7,21 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "roles")
 public class Rol {
-    enum TipoRol{
-        CLIENTE,
-        RECEPCIONISTA,
-        CAJERO,
-        ADMINISTRADOR,
-        GERENTE,
-        HUESPED
-    }
     @Id
-    private TipoRol nombre;
+    private String nombre;
 
-    public Rol(TipoRol tipoRol) {
-        this.nombre = tipoRol;
+    public Rol(String nombre) {
+        this.nombre = nombre;
     }
+
     public Rol() {
-
     }
 
-    public TipoRol getNombre() {
+    public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(TipoRol nombre) {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 }
