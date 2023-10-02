@@ -9,6 +9,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 import uniandes.edu.co.proyecto.modelo.servicios.Salon;
+import uniandes.edu.co.proyecto.modelo.servicios.Salon.TipoSalon;
 
 public interface SalonRepository extends JpaRepository<Salon, Integer> {
 
@@ -21,12 +22,12 @@ public interface SalonRepository extends JpaRepository<Salon, Integer> {
     @Modifying
     @Transactional
     @Query(value = "INSERT INTO salones (servicio_id, capacidad, costo_hora, tiempo_limpieza, tipo_salon) VALUES(:servicioId, :capacidad, :costoHora, :tiempoLimpieza, :tipoSalon)" , nativeQuery = true)
-    void insertSalon(@Param("servicioId") Integer servicioId, @Param("capacidad") Integer capacidad, @Param("costoHora") Double costoHora, @Param("tiempoLimpieza") Integer tiempoLimpieza, @Param("tipoSalon") String tipoSalon);
+    void insertSalon(@Param("servicioId") Integer servicioId, @Param("capacidad") Integer capacidad, @Param("costoHora") Double costoHora, @Param("tiempoLimpieza") Integer tiempoLimpieza, @Param("tipoSalon") TipoSalon tipoSalon);
 
     @Modifying
     @Transactional
     @Query(value = "UPDATE salones SET capacidad = :capacidad, costo_hora = :costoHora, tiempo_limpieza = :tiempoLimpieza, tipo_salon = :tipoSalon WHERE servicio_id = :servicioId" , nativeQuery = true)
-    void updateSalon(@Param("servicioId") Integer servicioId, @Param("capacidad") Integer capacidad, @Param("costoHora") Double costoHora, @Param("tiempoLimpieza") Integer tiempoLimpieza, @Param("tipoSalon") String tipoSalon);
+    void updateSalon(@Param("servicioId") Integer servicioId, @Param("capacidad") Integer capacidad, @Param("costoHora") Double costoHora, @Param("tiempoLimpieza") Integer tiempoLimpieza, @Param("tipoSalon") TipoSalon tipoSalon);
 
     @Modifying
     @Transactional
