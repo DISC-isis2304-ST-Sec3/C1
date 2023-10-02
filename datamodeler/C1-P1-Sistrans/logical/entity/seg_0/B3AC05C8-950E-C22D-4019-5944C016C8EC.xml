@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="B3AC05C8-950E-C22D-4019-5944C016C8EC" name="bares">
+<createdBy>VivoBook</createdBy>
+<createdTime>2023-09-24 22:18:18 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<engineerTo>
+<item key="98C83986-CDB6-4E63-3D26-988371A9968F" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="capacidad" id="45CDA162-C092-F896-E4F9-0E551260B4EA">
+<createdBy>VivoBook</createdBy>
+<createdTime>2023-09-24 22:18:25 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<engineerTo>
+<item key="98C83986-CDB6-4E63-3D26-988371A9968F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="estilo" id="902A5829-FE1D-B12A-C66A-1DA41F880A5E">
+<createdBy>VivoBook</createdBy>
+<createdTime>2023-09-24 22:18:37 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<engineerTo>
+<item key="98C83986-CDB6-4E63-3D26-988371A9968F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="servicio_id" id="4B14B6D2-5D7A-E869-FA6A-ED0AA53CDCE7">
+<createdBy>VivoBook</createdBy>
+<createdTime>2023-09-24 22:22:11 UTC</createdTime>
+<generatorID>A9E0C598-1896-B53D-DCBD-080889A5825D</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<engineerTo>
+<item key="98C83986-CDB6-4E63-3D26-988371A9968F" value="true"/>
+</engineerTo>
+<referedAttribute>94926AAC-9985-47BA-1DE4-A954E2C6E3B4</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="CF3303A6-0907-A326-7A36-17E811ABCB1D" name="Bar PK">
+<createdBy>VivoBook</createdBy>
+<createdTime>2023-09-24 22:22:27 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="98C83986-CDB6-4E63-3D26-988371A9968F" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>4B14B6D2-5D7A-E869-FA6A-ED0AA53CDCE7</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

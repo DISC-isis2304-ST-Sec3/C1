@@ -1,0 +1,66 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A9AFE499-50DC-9657-C4D9-54AEE080088D" name="productos">
+<createdBy>VivoBook</createdBy>
+<createdTime>2023-09-24 22:23:48 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<engineerTo>
+<item key="98C83986-CDB6-4E63-3D26-988371A9968F" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="origen" id="6B6F2E80-42C4-6AF6-28D3-EB9A467C9C09">
+<createdBy>VivoBook</createdBy>
+<createdTime>2023-09-24 22:24:46 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<engineerTo>
+<item key="98C83986-CDB6-4E63-3D26-988371A9968F" value="true"/>
+</engineerTo>
+<constraintName>ck_origen</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<listOfValues>
+<valueDef value="extranjero" description=""/>
+<valueDef value="nacional" description=""/>
+</listOfValues>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="item_d" id="E7C4FB5C-8381-57A7-DFCB-0D3A22B1C2AB">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 13:51:32 UTC</createdTime>
+<generatorID>AB003A70-7DAB-D569-C378-6874673009B2</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<engineerTo>
+<item key="98C83986-CDB6-4E63-3D26-988371A9968F" value="true"/>
+</engineerTo>
+<referedAttribute>AEE59651-AD20-FF4F-97E7-2404A23FF454</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="0B6D5004-7281-54A6-6690-963C2FC902D5" name="productos PK">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 13:51:32 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="98C83986-CDB6-4E63-3D26-988371A9968F" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>E7C4FB5C-8381-57A7-DFCB-0D3A22B1C2AB</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

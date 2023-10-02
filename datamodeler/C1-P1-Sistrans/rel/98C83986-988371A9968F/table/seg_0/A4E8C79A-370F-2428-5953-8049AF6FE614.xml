@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A4E8C79A-370F-2428-5953-8049AF6FE614" name="bares_productos">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="bar_id" id="CF436800-CA43-3F4B-3D1C-448794F4E284">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7FC97959-699D-8824-B620-A4637F4E6664" referredColumn="6033B89E-338D-B471-8A9E-35CECA87D220"/>
+</associations>
+</Column>
+<Column name="producto_id" id="B6AFFE7E-E43E-A389-E168-67444EA764AF">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DB9469B2-5E4D-A02B-35B6-3E15A2D31582" referredColumn="6651E515-05E1-83FC-004B-FAB0024C4C43"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2A799C00-76BD-844A-5F74-4A490D927D0A" name="bares_productos_PK">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CF436800-CA43-3F4B-3D1C-448794F4E284"/>
+<colUsage columnID="B6AFFE7E-E43E-A389-E168-67444EA764AF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A1D6BDCF-5EED-0F4C-7F6A-3E9BA6EDD2D4" name="bares_prod_bar_FK">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>4908BC9A-2D93-A88B-CC18-A1F944CF9058</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CF436800-CA43-3F4B-3D1C-448794F4E284"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1E6451B1-9BF7-1972-1650-A50DBFD45E98" name="bares_prod_producto_FK">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>4908BC9A-2D93-A88B-CC18-A1F944CF9058</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B6AFFE7E-E43E-A389-E168-67444EA764AF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

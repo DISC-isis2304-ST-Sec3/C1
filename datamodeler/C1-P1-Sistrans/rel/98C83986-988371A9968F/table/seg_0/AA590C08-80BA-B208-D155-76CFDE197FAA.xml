@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AA590C08-80BA-B208-D155-76CFDE197FAA" name="bares">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>B3AC05C8-950E-C22D-4019-5944C016C8EC</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="capacidad" id="793E66D8-BE33-4263-F566-BB772348FA44">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>45CDA162-C092-F896-E4F9-0E551260B4EA</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="estilo" id="21F05453-1CD7-F5FF-FE1F-813E574A369E">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>902A5829-FE1D-B12A-C66A-1DA41F880A5E</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="servicio_id" id="6033B89E-338D-B471-8A9E-35CECA87D220">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>4B14B6D2-5D7A-E869-FA6A-ED0AA53CDCE7</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0B676702-BD40-2D13-4F4B-66D6784CE755" referredColumn="5C64D557-976A-6318-A69C-FEB2ECB54C1A"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AEAB21A8-A78F-A3E9-3BE2-70DF8491F5C1" name="bares_PK">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>CF3303A6-0907-A326-7A36-17E811ABCB1D</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6033B89E-338D-B471-8A9E-35CECA87D220"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="53CA0CAC-8ED2-2058-7DDC-EA799BDCC394" name="bares_servicios_FK">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>A9E0C598-1896-B53D-DCBD-080889A5825D</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6033B89E-338D-B471-8A9E-35CECA87D220"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,96 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="CEEA7FB4-0C64-556B-E1EE-8F664BF18975" name="gimnasios">
+<createdBy>VivoBook</createdBy>
+<createdTime>2023-09-24 22:09:22 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<engineerTo>
+<item key="98C83986-CDB6-4E63-3D26-988371A9968F" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="capacidad" id="164D6752-45BE-9DE4-09D4-955CB75433E3">
+<createdBy>VivoBook</createdBy>
+<createdTime>2023-09-24 22:09:29 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<engineerTo>
+<item key="98C83986-CDB6-4E63-3D26-988371A9968F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="apertura" id="A613F471-C21B-5E25-7F2D-53044EDBCAA7">
+<createdBy>VivoBook</createdBy>
+<createdTime>2023-09-24 22:09:43 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<engineerTo>
+<item key="98C83986-CDB6-4E63-3D26-988371A9968F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cierre" id="B34A88ED-AA39-3C4D-48B8-78E5177DAA4D">
+<createdBy>VivoBook</createdBy>
+<createdTime>2023-09-24 22:10:03 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<engineerTo>
+<item key="98C83986-CDB6-4E63-3D26-988371A9968F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="valor" id="64D3EA89-6E56-6E6E-67A4-5F7C3704F501">
+<createdBy>VivoBook</createdBy>
+<createdTime>2023-09-24 22:09:52 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<engineerTo>
+<item key="98C83986-CDB6-4E63-3D26-988371A9968F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="servicio_id" id="DB751024-1384-AC12-FCE1-ED815FC20C92">
+<createdBy>VivoBook</createdBy>
+<createdTime>2023-09-24 22:13:55 UTC</createdTime>
+<generatorID>634390B7-C1C8-23EB-4CBE-4A245F3A1FA8</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<engineerTo>
+<item key="98C83986-CDB6-4E63-3D26-988371A9968F" value="true"/>
+</engineerTo>
+<referedAttribute>94926AAC-9985-47BA-1DE4-A954E2C6E3B4</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="550FA63B-A6CF-613A-9D04-EF62DCFB90F0" name="Gimnasio PK">
+<createdBy>VivoBook</createdBy>
+<createdTime>2023-09-24 22:10:32 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="98C83986-CDB6-4E63-3D26-988371A9968F" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>DB751024-1384-AC12-FCE1-ED815FC20C92</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

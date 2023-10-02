@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0CED3D28-F11E-3A8C-EA95-A54F48C353F8" name="restaurante_prods">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="restaurante_id" id="D6290ED4-161E-679A-6D1C-4224DF1560F2">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="99F2E8BA-6C04-3366-B0F3-12D966C291C9" referredColumn="6B44F5F9-72B6-1B88-4FD2-2385437A594F"/>
+</associations>
+</Column>
+<Column name="producto_id" id="FCD54BB3-6AA0-6F88-1D19-C65BA8E7BF4F">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CD745546-B34E-CE7D-0FB4-A464D81A5DB1" referredColumn="6651E515-05E1-83FC-004B-FAB0024C4C43"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F2BE8ACD-29A2-0B2C-17E2-2D3C22FFB48D" name="restaurante_prods_PK">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D6290ED4-161E-679A-6D1C-4224DF1560F2"/>
+<colUsage columnID="FCD54BB3-6AA0-6F88-1D19-C65BA8E7BF4F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EAB8B7DA-9A80-98CF-0CD6-07E57A33F1D7" name="rest_prods_restaurante_FK">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>163F1FBB-C546-D290-5265-929B6DFB0552</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D6290ED4-161E-679A-6D1C-4224DF1560F2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="37757170-A375-C67E-FF51-F7B7A2BF7432" name="rest_prods_producto_FK">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>163F1FBB-C546-D290-5265-929B6DFB0552</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FCD54BB3-6AA0-6F88-1D19-C65BA8E7BF4F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

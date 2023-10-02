@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="restaurante_prods" directorySegmentName="seg_0" id="163F1FBB-C546-D290-5265-929B6DFB0552">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-09-27 23:21:12 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<engineerTo>
+<item key="98C83986-CDB6-4E63-3D26-988371A9968F" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>D38EE207-0C03-AC94-705E-888FD69D4828</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>A9AFE499-50DC-9657-C4D9-54AEE080088D</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

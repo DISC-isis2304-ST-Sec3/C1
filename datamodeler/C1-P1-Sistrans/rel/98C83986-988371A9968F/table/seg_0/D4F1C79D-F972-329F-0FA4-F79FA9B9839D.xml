@@ -1,0 +1,111 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D4F1C79D-F972-329F-0FA4-F79FA9B9839D" name="psicinas">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>BD776FC6-35E2-FF8C-1B5C-79A99FC16019</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="capacidad" id="4B3A767D-B1D0-CFC2-9DA4-74715479B073">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>48AF0886-D3EC-DA85-B0FD-25CFF9464F06</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="apertura" id="4B9C252A-9D1E-9C20-ED6B-E2647605D74F">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>26DBD2DD-37F0-769D-AB47-A78CF3432954</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cierre" id="68440FA4-0F49-505E-4F6F-24C7F6B24CA4">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>24F1C175-9DF0-8675-B653-95DDD9A9DB0B</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="valor" id="A732EB27-0456-29FA-717F-7B4EC53056FD">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>55571B5B-7299-B1C0-2D29-7914677F0764</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,12,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="profundidad" id="113A94FC-D80D-984F-2D0D-093F6BD7A4E9">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>13E3A087-3AFF-8A9D-6FAE-9C451CFD7DAC</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,12,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="servicio_id" id="C593743D-8FE2-A4D8-7640-3761DA419431">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>9BA5BC41-9127-12AB-3439-2A3C30EC4767</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="97C6F8E4-8182-1DEF-2A05-5625A0E048C3" referredColumn="5C64D557-976A-6318-A69C-FEB2ECB54C1A"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FCBE7600-5DDF-01D7-FB0D-CEB08B011146" name="psicinas_PK">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>4F3A2A68-BE71-481B-7153-5BC2C52DE0A1</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C593743D-8FE2-A4D8-7640-3761DA419431"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="73A599B2-FA7B-AE6D-EF57-B162B045CB9B" name="psicinas_servicios_FK">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>2455E799-E009-AAA7-52B9-DA968B64A225</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C593743D-8FE2-A4D8-7640-3761DA419431"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,98 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="46AC8E64-852F-EDD3-3500-31813EA64BDB" name="consumos">
+<createdBy>VivoBook</createdBy>
+<createdTime>2023-09-24 21:47:05 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<engineerTo>
+<item key="98C83986-CDB6-4E63-3D26-988371A9968F" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="64342AB2-B7FA-F9D0-C8FC-947AC7B0CED9">
+<createdBy>VivoBook</createdBy>
+<createdTime>2023-09-24 21:47:12 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<engineerTo>
+<item key="98C83986-CDB6-4E63-3D26-988371A9968F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="valor_total" id="90A5452F-AEA8-964C-72CD-480D3E230871">
+<createdBy>VivoBook</createdBy>
+<createdTime>2023-09-24 21:49:07 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<engineerTo>
+<item key="98C83986-CDB6-4E63-3D26-988371A9968F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha" id="E2157101-3D7F-ECFE-8A69-8F7A94572163">
+<createdBy>VivoBook</createdBy>
+<createdTime>2023-09-24 21:49:28 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<engineerTo>
+<item key="98C83986-CDB6-4E63-3D26-988371A9968F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="servicio_id" id="4DAC101B-2A51-05AF-ACBE-BCAD4F1A2FE9">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-09-28 00:03:24 UTC</createdTime>
+<generatorID>A9D5A45D-76EE-DEB6-9739-875801315058</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<engineerTo>
+<item key="98C83986-CDB6-4E63-3D26-988371A9968F" value="true"/>
+</engineerTo>
+<referedAttribute>94926AAC-9985-47BA-1DE4-A954E2C6E3B4</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="estancia_id" id="4C287D41-5059-26EF-7EB9-34AA10B07FC3">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:02:58 UTC</createdTime>
+<generatorID>F7E017D7-E0BF-2485-C3E6-CD2D8542AD4C</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<engineerTo>
+<item key="98C83986-CDB6-4E63-3D26-988371A9968F" value="true"/>
+</engineerTo>
+<referedAttribute>045BC469-73D8-0146-BA71-52E23241982B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="15EC4B3C-E2CA-E226-0C22-53B4407347D9" name="consumos PK">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-09-28 00:05:28 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="98C83986-CDB6-4E63-3D26-988371A9968F" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>64342AB2-B7FA-F9D0-C8FC-947AC7B0CED9</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

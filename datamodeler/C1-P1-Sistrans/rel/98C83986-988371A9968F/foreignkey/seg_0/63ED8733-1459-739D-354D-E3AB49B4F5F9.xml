@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="63ED8733-1459-739D-354D-E3AB49B4F5F9" containerWithKeyObject="22C6566B-E4A6-193C-D6D8-28BCDE96DF89" localFKIndex="830F79A7-FEAE-7DAE-3BC8-44D84BAACB29" name="prod_incl_plc_FK">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>091B53B4-A6CF-D000-54C3-4381C770196E</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<referredTableLongName>planes_de_consumo</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>9EEBFD05-BC99-7BAE-1127-450188781E17</referredTableID>
+<keyObject>3974800E-130B-41F4-75C3-1CB10931B2BB</keyObject>
+<referredKeyID>3974800E-130B-41F4-75C3-1CB10931B2BB</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>nombre</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

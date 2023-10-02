@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="812CFDE1-FC64-7AF3-5CCF-4D585E06CB51" containerWithKeyObject="DB5BF051-EEF6-2F61-76CD-0F0F28676766" localFKIndex="782CE1AD-9D64-6058-581B-3E00F7E829B2" name="gym_maqs_maquina_FK">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>EABFD015-5B6C-8BE0-9774-7D6851AA2D20</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<referredTableLongName>maquinas</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>5946838F-E2A6-CB61-21FB-916FDCFEB638</referredTableID>
+<keyObject>0E44715B-1B1C-61E1-70E6-CD7A13EC8CF5</keyObject>
+<referredKeyID>0E44715B-1B1C-61E1-70E6-CD7A13EC8CF5</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>nombre</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

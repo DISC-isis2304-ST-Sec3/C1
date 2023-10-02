@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="11D5EBA0-793D-FD1F-5A7A-12B9A6FC3776" name="indumentarias">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>17994DB0-BA04-0D80-4F98-9BD9EFBC5147</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="elementos" id="F75D0D29-07B7-F5C1-674A-70165E2859EB">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>B6430494-9770-7596-A121-51A6E6A64E8D</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="valor_base" id="1F8CCA55-6533-CEA5-2436-91711046C727">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>CEB7BC94-8CD0-AF50-5776-8C62D48B6BDC</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,12,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="valor_elemento" id="28EB4234-3A9C-5996-F099-06EA273BC573">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>3129899A-4113-C517-83AC-6B90D3C8123F</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,12,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="servicio_id" id="8ED79EE9-B3FC-434C-93D1-88CC94B91683">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>864B1A96-E230-71E0-D8DB-26A94D7FA965</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4B8DB5E4-A1D7-A871-6F34-FE768B17F7FC" referredColumn="5C64D557-976A-6318-A69C-FEB2ECB54C1A"/>
+</associations>
+</Column>
+<Column name="id" id="D59FE01D-61AA-8C6D-A201-2F2CEAE1E474">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 17:28:46 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="43EA7398-58E2-6523-34AE-0B6DB4F9A4F7" name="indumentarias_PK">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>3DCA0302-D519-C148-F5BE-86FA926CBFA2</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D59FE01D-61AA-8C6D-A201-2F2CEAE1E474"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EC999F09-B6D7-6FD2-216B-1E4725AA9099" name="indumentarias_servicios_FK">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>B3D03273-D2BE-0842-D5C4-96DD584EDD7D</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8ED79EE9-B3FC-434C-93D1-88CC94B91683"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

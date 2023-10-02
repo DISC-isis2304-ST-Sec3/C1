@@ -1,0 +1,32 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="ocupaciones" directorySegmentName="seg_0" id="0F693878-A2B2-27DE-5FD3-38447C0F48E2">
+<createdBy>VivoBook</createdBy>
+<createdTime>2023-09-24 21:43:44 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<engineerTo>
+<item key="98C83986-CDB6-4E63-3D26-988371A9968F" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>900D9747-4D85-8FC3-E33C-BAB1EB54F7DE</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>038F0AC5-50B5-F899-86C0-5EE5254F0970</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<attribute name="fecha" id="E87AAD44-413F-C848-4829-C47BAE89ABA7">
+<createdBy>VivoBook</createdBy>
+<createdTime>2023-09-24 21:43:57 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<engineerTo>
+<item key="98C83986-CDB6-4E63-3D26-988371A9968F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</attribute>
+</attributes>
+</Relation>
