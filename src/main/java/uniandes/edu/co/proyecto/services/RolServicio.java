@@ -2,7 +2,7 @@ package uniandes.edu.co.proyecto.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import uniandes.edu.co.proyecto.Repositorio.RolRepository;
+import uniandes.edu.co.proyecto.repositorio.RolRepository;
 import uniandes.edu.co.proyecto.modelo.usuarios.Rol;
 
 import java.util.List;
