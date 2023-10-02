@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="revsev_items" directorySegmentName="seg_0" id="54C0F39C-02DC-FE0E-7B89-9267F1D128F4">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 13:53:10 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<engineerTo>
+<item key="98C83986-CDB6-4E63-3D26-988371A9968F" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>63963010-5801-363F-1DB4-7886208239BC</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>92C2EC16-4480-4BE2-7D04-5825AF37A215</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CD023388-8249-A8C2-16F2-87911C4F5655" name="tiendas_productos">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="tienda_id" id="6839E40E-EF4B-553E-16AE-56FF8C4B2E58">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="145D4B2B-7695-2339-066F-C887D5DBB83A" referredColumn="2A00A9B5-7A4A-59A0-3656-B00F5B5F6056"/>
+</associations>
+</Column>
+<Column name="producto_id" id="06C471A2-E062-160A-D8EE-DC0F3E85B23B">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B9E7E86C-282D-25AF-8F2A-1BED118F3B66" referredColumn="6651E515-05E1-83FC-004B-FAB0024C4C43"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="670EE24A-BE5C-0691-C8BD-D10697ADDFF0" name="tiendas_productos_PK">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6839E40E-EF4B-553E-16AE-56FF8C4B2E58"/>
+<colUsage columnID="06C471A2-E062-160A-D8EE-DC0F3E85B23B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B698BCFC-EE52-B9F1-CB2E-4889A85087F5" name="tiendas_prod_tienda_FK">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>D0F971BC-72BF-B867-07F7-C0893F510834</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6839E40E-EF4B-553E-16AE-56FF8C4B2E58"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C0DA64FB-1265-BE6C-98F8-DD04997BBBF5" name="tiendas_prod_producto_FK">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>D0F971BC-72BF-B867-07F7-C0893F510834</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="06C471A2-E062-160A-D8EE-DC0F3E85B23B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

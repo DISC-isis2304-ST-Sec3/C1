@@ -1,0 +1,78 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2CAE1130-1959-A1B3-6354-B447084DD220" name="dotacion_habitacion">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<ordsAlias>dotacion_hab</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="tipo_habitacion" id="B1B2AC51-7B12-E416-201D-96A6E5D6150B">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4AD631AD-E61F-4F7F-A30B-2303CDC0C538" referredColumn="1E366F2D-55B4-681F-015A-31016EB0783E"/>
+</associations>
+</Column>
+<Column name="dotacion" id="0F0C87E1-8253-AFA4-F2AB-3D29DC1F92C2">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3CD5E7FE-73A3-F407-6EA9-801CBFA1523B" referredColumn="2CF11989-8101-4221-AA87-DAE75D0C5B50"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CA74BE40-E766-FFA6-C4D8-EA6325A8D0C3" name="dotacion_hab_PK">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B1B2AC51-7B12-E416-201D-96A6E5D6150B"/>
+<colUsage columnID="0F0C87E1-8253-AFA4-F2AB-3D29DC1F92C2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1B13BDA1-B66B-BA0C-8E43-F27351A88FB0" name="dothab_tipo_habitacion_FK">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>45CAD6C0-C395-A65A-C73F-AD9D4640AF37</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B1B2AC51-7B12-E416-201D-96A6E5D6150B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F43DA5E6-18CC-50CD-C1F8-C193FC10DD21" name="dothab_dotacion_FK">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>45CAD6C0-C395-A65A-C73F-AD9D4640AF37</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0F0C87E1-8253-AFA4-F2AB-3D29DC1F92C2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

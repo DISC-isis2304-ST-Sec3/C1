@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="940FF66D-3A1C-2A73-82F1-9CEF8B9CBAF0" name="reservas_servicios">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>92C2EC16-4480-4BE2-7D04-5825AF37A215</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="fecha" id="665953B5-27E0-DFA9-2703-1ACBA28FAFF6">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>355E5F15-B830-52ED-E5E4-E8CC76EE1ABA</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="duracion" id="4EAF76D8-48A3-1697-EFCE-ED6717F576D9">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>2F7C0E2E-B514-BEC7-9BB1-0D8C1E7F7750</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="numero_habitacion" id="03FEEE0F-C432-4445-7C48-DB88B6358C2C">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>E164214A-A105-10C6-170F-64B50E7DD564</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4930036E-29BF-C091-FFA6-9825C6B3B3B8" referredColumn="D233BFE3-25B1-9857-9908-C29FACC5F578"/>
+</associations>
+</Column>
+<Column name="servicio_id" id="4200BB31-BFA0-A7B8-79DA-11014C96A3E9">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>CB11A2B4-EAB1-0270-6F34-8EA6F737DD52</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C01FE38E-5C75-854A-5870-BC5A8C7698DE" referredColumn="5C64D557-976A-6318-A69C-FEB2ECB54C1A"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AA84CCC8-EE8C-9BF7-11BA-C90BC2C8BEA0" name="reservas_servicios_PK">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>EBED9F8C-6A4C-8257-1F2E-601A36FE8027</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="03FEEE0F-C432-4445-7C48-DB88B6358C2C"/>
+<colUsage columnID="4200BB31-BFA0-A7B8-79DA-11014C96A3E9"/>
+<colUsage columnID="665953B5-27E0-DFA9-2703-1ACBA28FAFF6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="93E69980-0ADB-4952-F3D5-BD403D7A2F06" name="resv_sev_habitacion_FK">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>9626B297-F554-BC3F-B195-C60945C4F3CA</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="03FEEE0F-C432-4445-7C48-DB88B6358C2C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CFF784FD-6D87-33D6-8228-5B14E112D7EE" name="resv_sev_servicio_FK">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>7E2B4DBE-8F15-24CF-484F-67C9D9467586</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4200BB31-BFA0-A7B8-79DA-11014C96A3E9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

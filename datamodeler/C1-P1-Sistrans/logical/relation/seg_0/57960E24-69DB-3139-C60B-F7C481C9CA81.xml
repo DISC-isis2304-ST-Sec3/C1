@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="vigencia_plan_de_consumo" directorySegmentName="seg_0" id="57960E24-69DB-3139-C60B-F7C481C9CA81">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-09-27 22:36:52 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<engineerTo>
+<item key="98C83986-CDB6-4E63-3D26-988371A9968F" value="true"/>
+</engineerTo>
+<sourcePk>2B36F920-5873-C829-BD15-60EF143928C3</sourcePk>
+<targetPk>4ACC4C97-A1F2-60F5-CB05-F5C1EA6B0879</targetPk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>C0505770-8B33-C88E-7740-31932DAFBA83</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>156FE217-429B-4851-DA7E-B9AE1BA7AF12</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

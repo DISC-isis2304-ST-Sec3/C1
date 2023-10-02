@@ -1,0 +1,154 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9EEBFD05-BC99-7BAE-1127-450188781E17" name="planes_de_consumo">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>C0505770-8B33-C88E-7740-31932DAFBA83</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="nombre" id="3E62B1ED-91B7-E26D-041A-5812804E3DF8">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>0823A30D-C598-A44C-4BD9-F93E4BC9356B</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="descuento" id="43DE199C-9F08-D1F5-0103-D71476A21B7B">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>D10ACF23-694C-4911-3603-68E556E40101</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,5,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="minimas_noches" id="8F2DA07A-59EB-E0D8-A03E-4735A8237A85">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>76142577-47F5-723C-F04A-BB78761F7E3B</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="valor" id="2DC9A756-01B7-A976-1429-E725897346F3">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>2DFF6782-2C09-40F8-4861-E9F91CAADD9E</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,12,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="vigencia_id" id="EB5F4E92-6707-005A-2B21-3971F1267D2D">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>38A76CFB-B759-86A2-DA6C-C6D790AABF9E</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="00E4DE58-0E2A-04AD-C9E8-AF127DE10E2C" referredColumn="F064EA2D-38D2-7035-ADC1-88E5FB4B8988"/>
+</associations>
+</Column>
+<Column name="restriccion_id" id="E67D75F9-30D4-6D79-BC0F-7DA21EF56523">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>7C6A3E5E-0C3B-9AC7-DCDD-3554C304B704</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2110E1FD-066D-61FF-FDCD-D8760F473985" referredColumn="C2A4741F-1558-CB2C-B968-F325A89C0F0D"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3974800E-130B-41F4-75C3-1CB10931B2BB" name="planes_de_consumo_PK">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>2B36F920-5873-C829-BD15-60EF143928C3</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3E62B1ED-91B7-E26D-041A-5812804E3DF8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E57CA56D-EC25-D011-2BF3-E5AC1A935A3E" name="planes_de_consumo__IDX">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>6F303714-4861-5BD3-B77E-78AC09508CCB</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="E67D75F9-30D4-6D79-BC0F-7DA21EF56523"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BDD9CDF4-4719-D8A9-90FD-9D6087D06C7F" name="planes_de_consumo__IDXv1">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>57960E24-69DB-3139-C60B-F7C481C9CA81</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="EB5F4E92-6707-005A-2B21-3971F1267D2D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FC665FC7-095E-B304-BD75-78889658F392" name="plc_restriccion_dias_FK">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>6F303714-4861-5BD3-B77E-78AC09508CCB</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E67D75F9-30D4-6D79-BC0F-7DA21EF56523"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="493D81CE-A041-F012-0786-7BEE57A818AA" name="plc_consumo_vigencias_FK">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-10-01 16:15:08 UTC</createdTime>
+<generatorID>57960E24-69DB-3139-C60B-F7C481C9CA81</generatorID>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EB5F4E92-6707-005A-2B21-3971F1267D2D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

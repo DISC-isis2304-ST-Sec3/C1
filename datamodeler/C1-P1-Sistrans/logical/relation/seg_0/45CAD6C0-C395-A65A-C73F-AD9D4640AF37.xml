@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="dotacion_habitacion" directorySegmentName="seg_0" id="45CAD6C0-C395-A65A-C73F-AD9D4640AF37">
+<createdBy>VivoBook</createdBy>
+<createdTime>2023-09-24 21:27:10 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<engineerTo>
+<item key="98C83986-CDB6-4E63-3D26-988371A9968F" value="true"/>
+</engineerTo>
+<sourcePk>6FE24514-8991-002D-40DE-F96B2D5BB371</sourcePk>
+<targetPk>FE8BC819-15B0-C261-364A-E3C8ED504406</targetPk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>ADAF930E-E32E-8DAA-4BCC-D8E2D39D4C13</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>84BF211F-0B18-F32C-096D-7C405BA23384</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

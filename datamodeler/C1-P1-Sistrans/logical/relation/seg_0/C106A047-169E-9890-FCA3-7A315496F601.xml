@@ -1,0 +1,32 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="servicios_spa" directorySegmentName="seg_0" id="C106A047-169E-9890-FCA3-7A315496F601">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-09-27 23:26:40 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<engineerTo>
+<item key="98C83986-CDB6-4E63-3D26-988371A9968F" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>B08DFA27-0BA8-5570-E060-298144872710</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>63963010-5801-363F-1DB4-7886208239BC</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<attribute name="duracion" id="7C8793AB-05B7-6A25-0B2A-4C37BE3C7053">
+<createdBy>juanroj</createdBy>
+<createdTime>2023-09-27 23:26:47 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<engineerTo>
+<item key="98C83986-CDB6-4E63-3D26-988371A9968F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</attribute>
+</attributes>
+</Relation>

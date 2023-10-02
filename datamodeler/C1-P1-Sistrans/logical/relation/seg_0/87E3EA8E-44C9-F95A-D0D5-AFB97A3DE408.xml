@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_25" directorySegmentName="seg_0" id="87E3EA8E-44C9-F95A-D0D5-AFB97A3DE408">
+<createdBy>VivoBook</createdBy>
+<createdTime>2023-09-24 22:22:44 UTC</createdTime>
+<ownerDesignName>C1-P1-Sistrans</ownerDesignName>
+<engineerTo>
+<item key="98C83986-CDB6-4E63-3D26-988371A9968F" value="true"/>
+</engineerTo>
+<sourcePk>C11CCADB-AB9D-7A04-9967-8C44A669BC97</sourcePk>
+<identifying>true</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>E22C8B2D-09CE-0BE7-D3EB-67B511D3DC33</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>05E18F38-1164-A972-4FC6-26EA166DA9FA</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
