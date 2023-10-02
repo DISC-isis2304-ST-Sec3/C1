@@ -9,38 +9,38 @@ import uniandes.edu.co.proyecto.services.RolServicio;
 
 import java.util.List;
 
-@Controller("/roles")
+@Controller
 public class RolController {
 
     @Autowired
     private RolServicio rolServicio;
 
-    @GetMapping("/{nombre}")
+    @GetMapping("/roles/{nombre}")
     public String getByID(@PathVariable("nombre") String nombre, Model model) {
         model.addAttribute("rol", rolServicio.getByID(nombre));
         return "rol";
     }
 
-    @GetMapping("/all")
+    @GetMapping("/roles/all")
     public String getAll(Model model) {
         List<Rol> results = rolServicio.getAll();
         model.addAllAttributes(results);
         return "all roles";
     }
 
-    @PostMapping("/create")
+    @PostMapping("/roles/create")
     public String create(@ModelAttribute Rol rol, Model model) {
         Rol rolSaved = rolServicio.save(rol);
         return "rol saved";
     }
 
-    @PostMapping("/update")
+    @PostMapping("/roles/update")
     public String update(@ModelAttribute Rol rol, Model model) {
         Rol rolUpdated = rolServicio.update(rol);
         return "rol updated";
     }
 
-    @DeleteMapping()
+    @DeleteMapping("/roles")
     public String delete(@ModelAttribute Rol rol, Model model) {
         Boolean deleted = rolServicio.deleteByID(rol.getNombre());
         return "rol deleted";
