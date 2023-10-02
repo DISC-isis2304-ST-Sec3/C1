@@ -2,8 +2,9 @@ package uniandes.edu.co.proyecto.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import uniandes.edu.co.proyecto.Repositorio.SalonRepository;
+
 import uniandes.edu.co.proyecto.modelo.servicios.Salon;
+import uniandes.edu.co.proyecto.repositorio.SalonRepository;
 
 import java.util.List;
 

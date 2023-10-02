@@ -2,8 +2,9 @@ package uniandes.edu.co.proyecto.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import uniandes.edu.co.proyecto.Repositorio.HabitacionRepository;
+
 import uniandes.edu.co.proyecto.modelo.hospedaje.Habitacion;
+import uniandes.edu.co.proyecto.repositorio.HabitacionRepository;
 
 import java.util.List;
 

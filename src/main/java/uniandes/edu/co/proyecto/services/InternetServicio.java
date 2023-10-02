@@ -2,9 +2,9 @@ package uniandes.edu.co.proyecto.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import uniandes.edu.co.proyecto.Repositorio.InternetRepository;
-import uniandes.edu.co.proyecto.modelo.servicios.Internet;
 
+import uniandes.edu.co.proyecto.modelo.servicios.Internet;
+import uniandes.edu.co.proyecto.repositorio.InternetRepository;
 
 import java.util.List;
 
