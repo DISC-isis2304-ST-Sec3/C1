@@ -19,19 +19,17 @@ public interface TipoHabitacionRepository extends JpaRepository<TipoHabitacion, 
 
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO tipos_habitacion (nombre, precio_base, capacidad) VALUES(:nombre, :precio_base, :capacidad)" , nativeQuery = true)
-    void insertTipoHabitacion(@Param("nombre") String nombre, @Param("precio_base") Double precio_base, @Param("capacidad") Integer capacidad);
+    @Query(value = "INSERT INTO tipos_habitacion (nombre, precio_base, capacidad) VALUES(:nombre, :precioBase, :capacidad)" , nativeQuery = true)
+    void insertTipoHabitacion(@Param("nombre") String nombre, @Param("precioBase") Double precioBase, @Param("capacidad") Integer capacidad);
 
     @Modifying
     @Transactional
-    @Query(value = "UPDATE tipos_habitacion SET precio_base = :precio_base, capacidad = :capacidad WHERE nombre = :nombre" , nativeQuery = true)
-    void updateTipoHabitacion(@Param("nombre") String nombre, @Param("precio_base") Double precio_base, @Param("capacidad") Integer capacidad);
+    @Query(value = "UPDATE tipos_habitacion SET precio_base = :precioBase, capacidad = :capacidad WHERE nombre = :nombre" , nativeQuery = true)
+    void updateTipoHabitacion(@Param("nombre") String nombre, @Param("precioBase") Double precioBase, @Param("capacidad") Integer capacidad);
 
     @Modifying
     @Transactional
     @Query(value = "DELETE FROM tipos_habitacion WHERE nombre = :nombre", nativeQuery = true)
     void deleteTipoHabitacion(@Param("nombre") String nombre);
-
-    
     
 }
