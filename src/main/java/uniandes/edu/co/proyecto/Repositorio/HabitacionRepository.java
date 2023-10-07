@@ -8,6 +8,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 import uniandes.edu.co.proyecto.modelo.hospedaje.Habitacion;
+import uniandes.edu.co.proyecto.modelo.hospedaje.TipoHabitacion;
 
 public interface HabitacionRepository extends JpaRepository<Habitacion, Integer > {
     
@@ -20,12 +21,12 @@ public interface HabitacionRepository extends JpaRepository<Habitacion, Integer 
     @Modifying
     @Transactional
     @Query(value = "INSERT INTO habitaciones (numero, tipo) VALUES(:numero, :tipo)" , nativeQuery = true)
-    void insertHabitacion(@Param("numero") Integer numero, @Param("tipo") String tipo);
+    void insertHabitacion(@Param("numero") Integer numero, @Param("tipo") TipoHabitacion tipo);
 
     @Modifying
     @Transactional
     @Query(value = "UPDATE habitaciones SET tipo = :tipo WHERE numero = :numero" , nativeQuery = true)
-    void updateHabitacion(@Param("numero") Integer numero, @Param("tipo") String tipo);
+    void updateHabitacion(@Param("numero") Integer numero, @Param("tipo") TipoHabitacion tipo);
 
     @Modifying
     @Transactional
