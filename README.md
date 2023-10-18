@@ -1,7 +1,7 @@
-### C8
+### C1
 
 |Nombre|Código|
 |---|---|
 |J. Camilo mercado|202021541|
-|Jhon Serrato||
-|Luis Borbón||
+|Juan Jose Cediel Borrero|202212212|
+|Santiago Jaimes|201912921|
