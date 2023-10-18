@@ -1,7 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<ProcessModel class="oracle.dbtools.crest.model.design.process.ProcessModel" name="Process Model" id="AC760A62-C30E-B765-9B28-4A9711E84DAA">
-<createdBy>VivoBook</createdBy>
-<createdTime>2023-09-24 20:45:24 UTC</createdTime>
-<ownerDesignName>UMLentrega1</ownerDesignName>
-<shouldBeOpen>false</shouldBeOpen>
-</ProcessModel>

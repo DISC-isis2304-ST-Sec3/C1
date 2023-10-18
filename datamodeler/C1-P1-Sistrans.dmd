@@ -1,8 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="C1-P1-Sistrans" id="2A075365-10DB-CE7F-97EC-C6D94D29B607" version="3.5">
-<createdBy>VivoBook</createdBy>
-<createdTime>2023-09-24 20:45:24 UTC</createdTime>
-<ownerDesignName>UMLentrega1</ownerDesignName>
-<capitalNames>false</capitalNames>
-<designId>2A075365-10DB-CE7F-97EC-C6D94D29B607</designId>
-</OSDM_Design>

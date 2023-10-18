@@ -1,7 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<BusinessInfoDesign class="oracle.dbtools.crest.model.businessinfo.BusinessInfoDesign" name="Business Information" id="3D6F3C93-66BE-8180-9BFF-480D805E48D4">
-<createdBy>VivoBook</createdBy>
-<createdTime>2023-09-24 20:45:25 UTC</createdTime>
-<ownerDesignName>UMLentrega1</ownerDesignName>
-<shouldBeOpen>false</shouldBeOpen>
-</BusinessInfoDesign>
