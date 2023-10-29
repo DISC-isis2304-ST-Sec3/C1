@@ -13,7 +13,7 @@ public interface RFC1Repository extends JpaRepository<Consumos, Integer>{
                     "INNER JOIN CONSUMOS "+
                     "ON consumos.habitaciones_id = reservan.habitaciones_id " +
                     "WHERE reservas.fecha_salida > (SELECT CURRENT_DATE-365 from dual) "+
-                    "GROUP BY consumos.habitaciones_id", nativeQuery = true )
+                    "GROUP BY consumos.habitaciones_id ORDER BY consumos.habitaciones_id", nativeQuery = true )
                     Collection<Object[]> darConsumos();
 
                     

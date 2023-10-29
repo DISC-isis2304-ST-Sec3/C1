@@ -36,6 +36,7 @@
             <option value="client">Cliente</option>
             <option value="receptionist">Recepcionista</option>
             <option value="employee">Empleado</option>
+            <option value="manager">Gerente</option>
         </select>
 
         <div class="mt-4" id="buttons-admin">
@@ -45,7 +46,6 @@
             <a th:href="@{/habitaciones}" class="btn btn-primary btn-block">Habitaciones</a>
             <a th:href="@{/planesConsumo}" class="btn btn-primary btn-block">Planes de consumo</a>
             <a th:href="@{/tiposServicio}" class="btn btn-primary btn-block">Tipos de servicio</a>
-            <a th:href="@{/rfc1}" class="btn btn-primary btn-block">RFC1</a>
             
             
         </div>
@@ -62,13 +62,19 @@
         <div class="mt-4" id="buttons-employee">
             <a th:href="@{/consumos}" class="btn btn-primary btn-block">registrar consumos</a>
         </div>
-
+        
+        <div class="mt-4" id="buttons-manager">
+            <a th:href="@{/rfc1}" class="btn btn-primary btn-block">RFC1</a>
+            <a th:href="@{/rfc2}" class="btn btn-primary btn-block">RFC2</a>
+        </div>
+        
     </div>
-
+    
     <script>
         function toggleButtons() {
             var userType = document.getElementById("userType").value;
-
+            
+            document.getElementById("buttons-manager").style.display = "none";
             document.getElementById("buttons-admin").style.display = "none";
             document.getElementById("buttons-client").style.display = "none";
             document.getElementById("buttons-receptionist").style.display = "none";
@@ -81,6 +87,8 @@
                 document.getElementById("buttons-receptionist").style.display = "block";
             } else if (userType === "employee") {
                 document.getElementById("buttons-employee").style.display = "block";
+            } else if (userType === "manager") {
+                document.getElementById("buttons-manager").style.display = "block";
             }
         }
     </script>

@@ -18,7 +18,7 @@ public interface RFC2Repository extends JpaRepository<Consumos, Integer>{
                     "ON consumos.habitaciones_id = reservan.habitaciones_id " +
                     "WHERE reservas.fecha_salida > :fechaI AND reservas.fecha_salida < :fechaO " +
                     "GROUP BY consumos.tiposservicio_tipo " +
-                    "ORDER BY COUNT(consumos.tiposservicio_tipo) " +
+                    "ORDER BY COUNT(consumos.tiposservicio_tipo) DESC " +
                     "FETCH FIRST 20 ROWS ONLY", nativeQuery = true )
                     Collection<Object[]> darRta(@Param("fechaI") String fechaInicial, @Param("fechaO") String fechaFinal);
 
