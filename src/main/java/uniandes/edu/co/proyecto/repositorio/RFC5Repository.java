@@ -16,7 +16,7 @@ public interface RFC5Repository extends JpaRepository<Consumos, Integer>{
             "ON consumos.habitaciones_id = reservan.habitaciones_id " + //
             "INNER JOIN CHECKIN " + //
             "ON checkin.reservas_id = reservas.id " + //
-            "WHERE reservas.fecha_salida BETWEEN :FechaI AND FechaF " + //
+            "WHERE reservas.fecha_salida BETWEEN :FechaI AND :FechaF " + //
             "AND reservas.usuarios_num_documento = :numDoc AND reservas.usuarios_tipo_documento = :tipoDoc ", nativeQuery = true )
                     Collection<Object[]> darConsumos(@Param("FechaI") String FechaInicial, @Param("FechaF") String FechaFinal,
                     @Param("numDoc") int numDoc, @Param("tipoDoc") String tipoDoc);

@@ -18,7 +18,7 @@ public interface RFC10Repository extends JpaRepository<Consumos, Integer>{
             "    INNER JOIN RESERVAS " + //
             "    ON reservan.reservas_id = reservas.id " + //
             "    WHERE consumos.tiposservicio_tipo = :tipo " + //
-            "    AND reservas.fecha_salida > :FechaI AND reservas.fecha_salida < FechaF " + //
+            "    AND reservas.fecha_salida > :FechaI AND reservas.fecha_salida < :FechaF " + //
             ") ", nativeQuery = true )
                     Collection<Object[]> darRtaBase(@Param("FechaI") String FechaInicial, @Param("FechaF") String FechaFinal,
                     @Param("tipo") String tipoServicio);
@@ -33,7 +33,7 @@ public interface RFC10Repository extends JpaRepository<Consumos, Integer>{
             "    INNER JOIN RESERVAS " + //
             "    ON reservan.reservas_id = reservas.id " + //
             "    WHERE consumos.tiposservicio_tipo = :tipo " + //
-            "    AND reservas.fecha_salida > :FechaI AND reservas.fecha_salida < FechaF " + //
+            "    AND reservas.fecha_salida > :FechaI AND reservas.fecha_salida < :FechaF " + //
             ") GROUP BY informacionclientes.tipo_documento", nativeQuery = true )
                     Collection<Object[]> darRtaAgrupada(@Param("FechaI") String FechaInicial, @Param("FechaF") String FechaFinal,
                     @Param("tipo") String tipoServicio);
@@ -48,7 +48,7 @@ public interface RFC10Repository extends JpaRepository<Consumos, Integer>{
             "    INNER JOIN RESERVAS " + //
             "    ON reservan.reservas_id = reservas.id " + //
             "    WHERE consumos.tiposservicio_tipo = :tipo " + //
-            "    AND reservas.fecha_salida > :FechaI AND reservas.fecha_salida < FechaF " + //
+            "    AND reservas.fecha_salida > :FechaI AND reservas.fecha_salida < :FechaF " + //
             ") GROUP BY informacionclientes.tipo_documento " + //
             "ORDER BY cantidad ", nativeQuery = true )
                     Collection<Object[]> darRtaAgrupadaYOrdenada(@Param("FechaI") String FechaInicial, @Param("FechaF") String FechaFinal,
@@ -65,7 +65,7 @@ public interface RFC10Repository extends JpaRepository<Consumos, Integer>{
             "    INNER JOIN RESERVAS " + //
             "    ON reservan.reservas_id = reservas.id " + //
             "    WHERE consumos.tiposservicio_tipo = :tipo " + //
-            "    AND reservas.fecha_salida > :FechaI AND reservas.fecha_salida < FechaF " + //
+            "    AND reservas.fecha_salida > :FechaI AND reservas.fecha_salida < :FechaF " + //
             ") " + //
             "ORDER BY informacionclientes.nombre ", nativeQuery = true )
                     Collection<Object[]> darRtaOrdenada(@Param("FechaI") String FechaInicial, @Param("FechaF") String FechaFinal,
