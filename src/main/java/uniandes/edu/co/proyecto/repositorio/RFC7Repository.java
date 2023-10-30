@@ -9,14 +9,14 @@ public interface RFC7Repository extends JpaRepository<Consumos, Integer>{
 
     @Query(value = "WITH estadia AS ( " + //
                     "    SELECT reservas.usuarios_tipo_documento, reservas.usuarios_num_documento,   " + //
-                    "    reservas.usuarios_nombre, SUM(reservas.fecha_salida - reservas.fecha_inicio) AS dias " + //
+                    "    reservas.usuarios_nombre, SUM(reservas.fecha_salida - reservas.fecha_inicio) AS dias, 'Estadía mayor a 2 semanas' AS motivo " + //
                     "    FROM RESERVAS " + //
                     "    GROUP BY reservas.usuarios_num_documento, reservas.usuarios_tipo_documento, " + //
                     "    reservas.usuarios_nombre " + //
                     ") " + //
                     ", mejoresconsumos AS ( " + //
                     "    SELECT reservas.usuarios_tipo_documento, reservas.usuarios_num_documento,   " + //
-                    "    reservas.usuarios_nombre, SUM(costo) AS costo_total " + //
+                    "    reservas.usuarios_nombre, SUM(costo) AS costo_total, 'Consume más de $15’000.000.oo' AS motivo " + //
                     "    FROM RESERVAS  " + //
                     "    INNER JOIN RESERVAN " + //
                     "    ON reservas.id = reservan.habitaciones_id " + //
@@ -29,16 +29,16 @@ public interface RFC7Repository extends JpaRepository<Consumos, Integer>{
                     "    reservas.usuarios_nombre " + //
                     ") " + //
                     "SELECT * FROM ( " + //
-                    "    SELECT usuarios_tipo_documento, usuarios_num_documento, usuarios_nombre " + //
+                    "    SELECT usuarios_tipo_documento, usuarios_num_documento, usuarios_nombre, motivo " + //
                     "    FROM ESTADIA " + //
                     "    WHERE dias = (SELECT MAX(dias) FROM estadia) " + //
                     "    UNION ALL " + //
-                    "    SELECT usuarios_tipo_documento, usuarios_num_documento, usuarios_nombre " + //
+                    "    SELECT usuarios_tipo_documento, usuarios_num_documento, usuarios_nombre, motivo " + //
                     "    FROM mejoresconsumos " + //
                     "    WHERE costo_total = (SELECT MAX(costo_total) FROM mejoresconsumos) " + //
-                    "    GROUP BY usuarios_tipo_documento, usuarios_num_documento, usuarios_nombre " + //
+                    "    GROUP BY usuarios_tipo_documento, usuarios_num_documento, usuarios_nombre, motivo " + //
                     ") " + //
-                    "GROUP BY usuarios_tipo_documento, usuarios_num_documento, usuarios_nombre ", nativeQuery = true )
+                    "GROUP BY usuarios_tipo_documento, usuarios_num_documento, usuarios_nombre, motivo ", nativeQuery = true )
                     Collection<Object[]> darRta();
 
                     
