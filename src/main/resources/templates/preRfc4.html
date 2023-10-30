@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar RFC4</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+    <br>
+    <div class="container w-100">    
+
+    <h1 class="text-center">Consultar RFC4</h1>
+
+    <div class="row">
+        <div class="column border border-2 p-3">
+
+            <form th:action="@{/rfc4/filtrarPrecio}" method="get">
+        
+                <h4>Consultar por rango de precio</h4>
+                <br>
+
+                <label class="col-form-label" for="fechaI">Precio inferior</label>
+                <input class="form-control" type="number" id="precioI" name="precioI" required><br>
+                <label class="col-form-label" for="fechaO">Precio superior</label>
+                <input class="form-control" type="number" id="precioO" name="precioO" required><br>
+        
+                <div class="text-center">
+                <input type="submit" value="Consultar" class="btn btn-primary">
+                </div>
+            </br>
+            </form>
+            
+        </div>
+        <div class="column border border-2 p-3">
+            
+            <form th:action="@{/rfc4/filtrarTipo}" method="get">
+        
+                <h4>Consultar por categoría</h4>
+                <br>
+                <label class="col-form-label" for="tipo">Categoría</label>
+                <select class="form-control" id="tipo" name="tipo" required>
+                    <option value="internet">Internet</option>
+                    <option value="bar">Bar</option>
+                    <option value="restaurante">Restaurante</option>
+                    <option value="supermercado">Super-mercado</option>
+                    <option value="tienda">Tienda boutique</option>
+                    <option value="spa">Spa</option>
+                    <option value="lavadoSecadoEmbolado">Lavandería</option>
+                    <option value="salon">Salón de eventos</option>
+                    <option value="prestamo">Préstamo</option>
+                </select><br>
+        
+                <div class="text-center">
+                    <br><br><br><br>
+                <input type="submit" value="Consultar" class="btn btn-primary">
+                </div>
+            </br>
+            </form>
+
+        </div>
+        <div class="column border border-2 p-3">
+            
+            <form th:action="@{/rfc4/filtrarFecha}" method="get">
+        
+                <h4>Ingrese un rango de fechas</h4>
+                <br>
+                <label class="col-form-label" for="fechaI">Fecha inicial</label>
+                <input class="form-control" type="date" id="fechaI" name="fechaI" required><br>
+                <label class="col-form-label" for="fechaO">Fecha final</label>
+                <input class="form-control" type="date" id="fechaO" name="fechaO" required><br>
+        
+                <div class="text-center">
+                <input type="submit" value="Consultar" class="btn btn-primary">
+            </div>
+        </br>
+    </form>
+    
+</div>
+</div>
+<br>
+<a th:href="@{/}" class="btn btn-primary">Cancelar</a>
+</div>
+</body>
+</html>
