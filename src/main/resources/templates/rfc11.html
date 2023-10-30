@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcionamiento</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+    <div>
+        <h1>Consultar funcionamiento</h1>
+        <table class="table table-hover table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Semana</th>
+                    <th>Servicio más consumido</th>
+                    <th>Servicio menos consumido</th>
+                    <th>Habitación más reservada</th>
+                    <th>Habitación mmenos reservada</th>
+                </tr>
+            </thead>
+            <tbody>
+                <th:block th:each="dato : ${rta}">
+                    <tr>
+                        <td th:text="${dato[0]}"></td>
+                        <td th:text="${dato[1]}"></td>
+                        <td th:text="${dato[2]}"></td>
+                        <td th:text="${dato[3]}"></td>
+                        <td th:text="${dato[4]}"></td>
+                    </tr>
+                </th:block>
+            </tbody>
+        </table>
+        <a th:href="@{/}" class="btn btn-primary">Volver</a>
+    </div>
+</body>
+</html>

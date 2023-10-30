@@ -27,7 +27,7 @@ public interface RFC11Repository extends JpaRepository<Consumos, Integer>{
                     "        SELECT c.*, " + //
                     "        ROW_NUMBER() OVER (PARTITION BY semana, cantidad_consumos ORDER BY semana) AS rn " + //
                     "        FROM ConsumosPorSemana c " + //
-                    "        WHERE cantidad_consumos = (SELECT MAX(cantidad_consumos) FROM ConsumosPorSemana c2 ) and c.semana = s.semana " + //
+                    "        WHERE cantidad_consumos = (SELECT MAX(cantidad_consumos) FROM ConsumosPorSemana c2 WHERE c2.semana = s.semana) and c.semana = s.semana " + //
                     "        ) " + //
                     "        WHERE rn = 1) AS servicio_mas_consumido, " + //
                     "      (SELECT tiposservicio_tipo " + //
@@ -35,7 +35,7 @@ public interface RFC11Repository extends JpaRepository<Consumos, Integer>{
                     "        SELECT c.*, " + //
                     "        ROW_NUMBER() OVER (PARTITION BY semana, cantidad_consumos ORDER BY semana) AS rn " + //
                     "        FROM ConsumosPorSemana c " + //
-                    "        WHERE cantidad_consumos = (SELECT MIN(cantidad_consumos) FROM ConsumosPorSemana c2 ) and c.semana = s.semana " + //
+                    "        WHERE cantidad_consumos = (SELECT MIN(cantidad_consumos) FROM ConsumosPorSemana c2 WHERE c2.semana = s.semana) and c.semana = s.semana " + //
                     "        ) " + //
                     "        WHERE rn = 1) AS servicio_menos_consumido, " + //
                     "    (SELECT habitaciones_id " + //
