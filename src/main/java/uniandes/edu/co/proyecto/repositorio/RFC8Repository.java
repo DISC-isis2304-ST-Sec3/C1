@@ -1,6 +1,5 @@
 package uniandes.edu.co.proyecto.repositorio;
 
-import java.util.Collection;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import uniandes.edu.co.proyecto.modelo.Consumos;
@@ -18,7 +17,7 @@ public interface RFC8Repository extends JpaRepository<Consumos, Integer>{
                     ") " + //
                     "SELECT frecuencia_consumos.tiposservicio_tipo FROM frecuencia_consumos  " + //
                     "WHERE conteo/52 < 3", nativeQuery = true )
-                    Collection<Object[]> darRta();
+                    Object[] darRta();
 
                     
 }
