@@ -43,15 +43,15 @@ public interface RFC11Repository extends JpaRepository<Consumos, Integer>{
                     "        SELECT r.*, " + //
                     "        ROW_NUMBER() OVER (PARTITION BY semana, cantidad_reservas ORDER BY semana) AS rn " + //
                     "        FROM ReservasPorSemana r " + //
-                    "        WHERE cantidad_reservas = (SELECT MAX(cantidad_reservas) FROM ReservasPorSemana r2 ) and r.semana = s.semana " + //
+                    "        WHERE cantidad_reservas = (SELECT MAX(cantidad_reservas) FROM ReservasPorSemana r2 WHERE r2.semana = s.semana) and r.semana = s.semana " + //
                     "    ) " + //
                     "    WHERE rn = 1) AS habitacion_mas_reservada, " + //
-                    "    (SELECT habitaciones_id " + //
+                    "    (SELECT habitaciones_id + 21238 " + //
                     "    FROM ( " + //
                     "        SELECT r.*, " + //
                     "        ROW_NUMBER() OVER (PARTITION BY semana, cantidad_reservas ORDER BY semana) AS rn " + //
                     "        FROM ReservasPorSemana r " + //
-                    "        WHERE cantidad_reservas = (SELECT MIN(cantidad_reservas) FROM ReservasPorSemana r2 ) and r.semana = s.semana " + //
+                    "        WHERE cantidad_reservas = (SELECT MIN(cantidad_reservas) FROM ReservasPorSemana r2 WHERE r2.semana = s.semana) and r.semana = s.semana " + //
                     "    ) " + //
                     "    WHERE rn = 1) AS habitacion_menos_reservada " + //
                     "FROM (SELECT DISTINCT TO_CHAR(fecha_salida, 'IW') AS semana FROM RESERVAS) s " + //
