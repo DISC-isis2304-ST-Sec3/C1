@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Consumo</title>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+    </head>
+    <body>
+        <div>
+            <h1>Consultar consumo en HOTELANDES</h1>
+            <br>
+            <div class="row p-5 justify-content-around">
+                <div class="column p-5 text-center">
+                    <form th:action="@{/rfc10/exe/ordered}" method="get">
+
+                        <h5>Seleccione una columna para ordenar</h5>
+                        <br>
+                        <label class="col-form-label" for="filtro">Criterio de ordenamiento</label>
+                        <select class="form-control" id="filtro" name="filtro" required>
+                            <option value="nombre">Nombre</option>
+                            <option value="numDoc">Número de documento</option>
+                            <option value="tipoDoc">Tipo de documento</option>
+                            <option value="correo">Correo</option>
+                        </select><br>
+                        <div class="text-center">
+                            <input type="submit" value="Ordenar" class="btn btn-primary">
+                        </div>
+                    </br>
+                </form>
+            </div>
+                <div class="column p-5 text-center">
+                    <form th:action="@{/rfc10/exe/grouped}" method="get">
+
+                        <h5>Seleccione una columna para agrupar</h5>
+                        <br>
+                        <label class="col-form-label" for="filtro">Criterio de ordenamiento</label>
+                        <select class="form-control" id="filtro" name="filtro" required>
+                            <option value="nombre">Nombre</option>
+                            <option value="tipoDoc">tipo de documento</option>
+                            <option value="correo">Correo</option>
+                        </select><br>
+                        <div class="text-center">
+                            <input type="submit" value="Agrupar" class="btn btn-primary">
+                        </div>
+                    </br>
+                </form>
+            </div>
+
+            <div class="column p-5">
+                <form th:action="@{/rfc10/exe/orderedgrouped}" method="get">
+
+                    <h5>Seleccione una columna para agrupar y ordenar</h5>
+                    <br>
+                    <label class="col-form-label" for="filtro">Criterio de ordenamiento</label>
+                    <select class="form-control" id="filtro" name="filtro" required>
+                        <option value="nombre">Nombre</option>
+                        <option value="tipoDoc">Tipo de documento</option>
+                        <option value="numDoc">Número de documento</option>
+                        <option value="correo">Correo</option>
+                    </select><br>
+                    <div class="text-center">
+                        <input type="submit" value="Ordenar y agrupar" class="btn btn-primary">
+                    </div>
+                </br>
+            </form>
+
+                </div>
+            </div>
+            <br><br>
+        <table class="table table-hover table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Tipo documento</th>
+                    <th>Número de documento</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <th:block th:each="dato : ${rta}">
+                    <tr>
+                        <td th:text="${dato[0]}"></td>
+                        <td th:text="${dato[1]}"></td>
+                        <td th:text="${dato[2]}"></td>
+                        <td th:text="${dato[3]}"></td>
+                    </tr>
+                </th:block>
+            </tbody>
+        </table>
+
+        <a th:href="@{/rfc10}" class="btn btn-primary">Volver</a>
+    </div>
+</body>
+</html>

@@ -24,6 +24,102 @@ public interface RFC10Repository extends JpaRepository<Consumos, Integer>{
                     @Param("tipo") String tipoServicio);
 
     
+    @Query(value = " SELECT informacionclientes.nombre, COUNT(*) AS cantidad  " + //
+                    "FROM INFORMACIONCLIENTES " + //
+                    "WHERE (infoRmacionclientes.tipo_documento, informacionclientes.num_documento) not in ( " + //
+                    "    SELECT reservas.usuarios_tipo_documento, reservas.usuarios_num_documento " + //
+                    "    FROM CONSUMOS " + //
+                    "    INNER JOIN RESERVAN " + //
+                    "    ON consumos.habitaciones_id = reservan.habitaciones_id " + //
+                    "    INNER JOIN RESERVAS " + //
+                    "    ON reservan.reservas_id = reservas.id " + //
+                    "    WHERE consumos.tiposservicio_tipo = :tipo " + //
+                    "    AND reservas.fecha_salida > :FechaI AND reservas.fecha_salida < :FechaF " + //
+                    ") " + //
+                    "GROUP BY informacionclientes.nombre", nativeQuery = true )
+                    Collection<Object[]> darRtaAgrupadaNombre(@Param("FechaI") String FechaInicial, @Param("FechaF") String FechaFinal,
+                    @Param("tipo") String tipoServicio);
+    
+    @Query(value = " SELECT informacionclientes.tipo_documento, COUNT(*) AS cantidad  " + //
+                    "FROM INFORMACIONCLIENTES " + //
+                    "WHERE (infoRmacionclientes.tipo_documento, informacionclientes.num_documento) not in ( " + //
+                    "    SELECT reservas.usuarios_tipo_documento, reservas.usuarios_num_documento " + //
+                    "    FROM CONSUMOS " + //
+                    "    INNER JOIN RESERVAN " + //
+                    "    ON consumos.habitaciones_id = reservan.habitaciones_id " + //
+                    "    INNER JOIN RESERVAS " + //
+                    "    ON reservan.reservas_id = reservas.id " + //
+                    "    WHERE consumos.tiposservicio_tipo = :tipo " + //
+                    "    AND reservas.fecha_salida > :FechaI AND reservas.fecha_salida < :FechaF " + //
+                    ") " + //
+                    "GROUP BY informacionclientes.tipo_documento", nativeQuery = true )
+                    Collection<Object[]> darRtaAgrupadaTipoDoc(@Param("FechaI") String FechaInicial, @Param("FechaF") String FechaFinal,
+                    @Param("tipo") String tipoServicio);
+    
+    @Query(value = " SELECT informacionclientes.correo, COUNT(*) AS cantidad  " + //
+                    "FROM INFORMACIONCLIENTES " + //
+                    "WHERE (infoRmacionclientes.tipo_documento, informacionclientes.num_documento) not in ( " + //
+                    "    SELECT reservas.usuarios_tipo_documento, reservas.usuarios_num_documento " + //
+                    "    FROM CONSUMOS " + //
+                    "    INNER JOIN RESERVAN " + //
+                    "    ON consumos.habitaciones_id = reservan.habitaciones_id " + //
+                    "    INNER JOIN RESERVAS " + //
+                    "    ON reservan.reservas_id = reservas.id " + //
+                    "    WHERE consumos.tiposservicio_tipo = :tipo " + //
+                    "    AND reservas.fecha_salida > :FechaI AND reservas.fecha_salida < :FechaF " + //
+                    ") " + //
+                    "GROUP BY informacionclientes.correo", nativeQuery = true )
+                    Collection<Object[]> darRtaAgrupadaCorreo(@Param("FechaI") String FechaInicial, @Param("FechaF") String FechaFinal,
+                    @Param("tipo") String tipoServicio);
+    
+    @Query(value = " SELECT informacionclientes.nombre, COUNT(*) AS cantidad  " + //
+                    "FROM INFORMACIONCLIENTES " + //
+                    "WHERE (infoRmacionclientes.tipo_documento, informacionclientes.num_documento) not in ( " + //
+                    "    SELECT reservas.usuarios_tipo_documento, reservas.usuarios_num_documento " + //
+                    "    FROM CONSUMOS " + //
+                    "    INNER JOIN RESERVAN " + //
+                    "    ON consumos.habitaciones_id = reservan.habitaciones_id " + //
+                    "    INNER JOIN RESERVAS " + //
+                    "    ON reservan.reservas_id = reservas.id " + //
+                    "    WHERE consumos.tiposservicio_tipo = :tipo " + //
+                    "    AND reservas.fecha_salida > :FechaI AND reservas.fecha_salida < :FechaF " + //
+                    ") " + //
+                    "GROUP BY informacionclientes.nombre ORDER BY cantidad ", nativeQuery = true )
+                    Collection<Object[]> darRtaAgrupadaYOrdenadaNombre(@Param("FechaI") String FechaInicial, @Param("FechaF") String FechaFinal,
+                    @Param("tipo") String tipoServicio);
+    
+    @Query(value = " SELECT informacionclientes.tipo_documento, COUNT(*) AS cantidad  " + //
+                    "FROM INFORMACIONCLIENTES " + //
+                    "WHERE (infoRmacionclientes.tipo_documento, informacionclientes.num_documento) not in ( " + //
+                    "    SELECT reservas.usuarios_tipo_documento, reservas.usuarios_num_documento " + //
+                    "    FROM CONSUMOS " + //
+                    "    INNER JOIN RESERVAN " + //
+                    "    ON consumos.habitaciones_id = reservan.habitaciones_id " + //
+                    "    INNER JOIN RESERVAS " + //
+                    "    ON reservan.reservas_id = reservas.id " + //
+                    "    WHERE consumos.tiposservicio_tipo = :tipo " + //
+                    "    AND reservas.fecha_salida > :FechaI AND reservas.fecha_salida < :FechaF " + //
+                    ") " + //
+                    "GROUP BY informacionclientes.tipo_documento ORDER BY cantidad ", nativeQuery = true )
+                    Collection<Object[]> darRtaAgrupadaYOrdenadaTipoDoc(@Param("FechaI") String FechaInicial, @Param("FechaF") String FechaFinal,
+                    @Param("tipo") String tipoServicio);
+    
+    @Query(value = " SELECT informacionclientes.correo, COUNT(*) AS cantidad  " + //
+                    "FROM INFORMACIONCLIENTES " + //
+                    "WHERE (infoRmacionclientes.tipo_documento, informacionclientes.num_documento) not in ( " + //
+                    "    SELECT reservas.usuarios_tipo_documento, reservas.usuarios_num_documento " + //
+                    "    FROM CONSUMOS " + //
+                    "    INNER JOIN RESERVAN " + //
+                    "    ON consumos.habitaciones_id = reservan.habitaciones_id " + //
+                    "    INNER JOIN RESERVAS " + //
+                    "    ON reservan.reservas_id = reservas.id " + //
+                    "    WHERE consumos.tiposservicio_tipo = :tipo " + //
+                    "    AND reservas.fecha_salida > :FechaI AND reservas.fecha_salida < :FechaF " + //
+                    ") " + //
+                    "GROUP BY informacionclientes.correo ORDER BY cantidad ", nativeQuery = true )
+                    Collection<Object[]> darRtaAgrupadaYOrdenadaCorreo(@Param("FechaI") String FechaInicial, @Param("FechaF") String FechaFinal,
+                    @Param("tipo") String tipoServicio);              
+    
     @Query(value = "SELECT * FROM INFORMACIONCLIENTES " + //
             "WHERE (infoRmacionclientes.tipo_documento, informacionclientes.num_documento) not in ( " + //
             "    SELECT reservas.usuarios_tipo_documento, reservas.usuarios_num_documento " + //
@@ -34,27 +130,10 @@ public interface RFC10Repository extends JpaRepository<Consumos, Integer>{
             "    ON reservan.reservas_id = reservas.id " + //
             "    WHERE consumos.tiposservicio_tipo = :tipo " + //
             "    AND reservas.fecha_salida > :FechaI AND reservas.fecha_salida < :FechaF " + //
-            ") GROUP BY informacionclientes.tipo_documento", nativeQuery = true )
-                    Collection<Object[]> darRtaAgrupada(@Param("FechaI") String FechaInicial, @Param("FechaF") String FechaFinal,
+            ") " + //
+            "ORDER BY informacionclientes.tipo_documento ", nativeQuery = true )
+                    Collection<Object[]> darRtaOrdenadaTipoDoc(@Param("FechaI") String FechaInicial, @Param("FechaF") String FechaFinal,
                     @Param("tipo") String tipoServicio);
-           
-                    
-    @Query(value = "SELECT * FROM INFORMACIONCLIENTES " + //
-            "WHERE (infoRmacionclientes.tipo_documento, informacionclientes.num_documento) not in ( " + //
-            "    SELECT reservas.usuarios_tipo_documento, reservas.usuarios_num_documento " + //
-            "    FROM CONSUMOS " + //
-            "    INNER JOIN RESERVAN " + //
-            "    ON consumos.habitaciones_id = reservan.habitaciones_id " + //
-            "    INNER JOIN RESERVAS " + //
-            "    ON reservan.reservas_id = reservas.id " + //
-            "    WHERE consumos.tiposservicio_tipo = :tipo " + //
-            "    AND reservas.fecha_salida > :FechaI AND reservas.fecha_salida < :FechaF " + //
-            ") GROUP BY informacionclientes.tipo_documento " + //
-            "ORDER BY cantidad ", nativeQuery = true )
-                    Collection<Object[]> darRtaAgrupadaYOrdenada(@Param("FechaI") String FechaInicial, @Param("FechaF") String FechaFinal,
-                    @Param("tipo") String tipoServicio);
-           
-                    
     
     @Query(value = "SELECT * FROM INFORMACIONCLIENTES " + //
             "WHERE (infoRmacionclientes.tipo_documento, informacionclientes.num_documento) not in ( " + //
@@ -68,7 +147,37 @@ public interface RFC10Repository extends JpaRepository<Consumos, Integer>{
             "    AND reservas.fecha_salida > :FechaI AND reservas.fecha_salida < :FechaF " + //
             ") " + //
             "ORDER BY informacionclientes.nombre ", nativeQuery = true )
-                    Collection<Object[]> darRtaOrdenada(@Param("FechaI") String FechaInicial, @Param("FechaF") String FechaFinal,
+                    Collection<Object[]> darRtaOrdenadaNombre(@Param("FechaI") String FechaInicial, @Param("FechaF") String FechaFinal,
+                    @Param("tipo") String tipoServicio);
+    
+    @Query(value = "SELECT * FROM INFORMACIONCLIENTES " + //
+            "WHERE (infoRmacionclientes.tipo_documento, informacionclientes.num_documento) not in ( " + //
+            "    SELECT reservas.usuarios_tipo_documento, reservas.usuarios_num_documento " + //
+            "    FROM CONSUMOS " + //
+            "    INNER JOIN RESERVAN " + //
+            "    ON consumos.habitaciones_id = reservan.habitaciones_id " + //
+            "    INNER JOIN RESERVAS " + //
+            "    ON reservan.reservas_id = reservas.id " + //
+            "    WHERE consumos.tiposservicio_tipo = :tipo " + //
+            "    AND reservas.fecha_salida > :FechaI AND reservas.fecha_salida < :FechaF " + //
+            ") " + //
+            "ORDER BY informacionclientes.num_documento ", nativeQuery = true )
+                    Collection<Object[]> darRtaOrdenadaNumDoc(@Param("FechaI") String FechaInicial, @Param("FechaF") String FechaFinal,
+                    @Param("tipo") String tipoServicio);
+    
+    @Query(value = "SELECT * FROM INFORMACIONCLIENTES " + //
+            "WHERE (infoRmacionclientes.tipo_documento, informacionclientes.num_documento) not in ( " + //
+            "    SELECT reservas.usuarios_tipo_documento, reservas.usuarios_num_documento " + //
+            "    FROM CONSUMOS " + //
+            "    INNER JOIN RESERVAN " + //
+            "    ON consumos.habitaciones_id = reservan.habitaciones_id " + //
+            "    INNER JOIN RESERVAS " + //
+            "    ON reservan.reservas_id = reservas.id " + //
+            "    WHERE consumos.tiposservicio_tipo = :tipo " + //
+            "    AND reservas.fecha_salida > :FechaI AND reservas.fecha_salida < :FechaF " + //
+            ") " + //
+            "ORDER BY informacionclientes.correo  ", nativeQuery = true )
+                    Collection<Object[]> darRtaOrdenadaCorreo(@Param("FechaI") String FechaInicial, @Param("FechaF") String FechaFinal,
                     @Param("tipo") String tipoServicio);
                     
 }
