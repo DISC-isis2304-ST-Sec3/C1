@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumos del Cliente</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+    <div>
+        <h1>Lista de consumos del cliente</h1>
+        <table class="table table-hover table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID habitación</th>
+                    <th>Tipo de servicio</th>
+                    <th>Descripción</th>
+                    <th>Costo</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <th:block th:each="consumo : ${consumoscliente}">
+                    <tr>
+                        <td th:text="${consumo.habitacion.id}"></td>
+                        <td th:text="${consumo.tipoServicio}"></td>
+                        <td th:text="${consumo.descripcion}"></td>
+                        <td th:text="${consumo.costo}"></td>
+                        <td>
+                            <a th:href="@{'/consumoscliente/' + ${consumo.numDocumento} + '/delete'}"
+                               onclick="return confirm('¿Está seguro de borrar el consumo?')">Eliminar</a>
+                        </td>
+                    </tr>
+                </th:block>
+            </tbody>
+        </table>
+        <a th:href="@{/}" class="btn btn-primary">Volver</a>
+        <a th:href="@{'/consumoscliente/' + ${consumoscliente[0].numDocumento}}" class = "btn btn-primary">Añadir consumo</a>
+    </div>
+</body>
+</html>

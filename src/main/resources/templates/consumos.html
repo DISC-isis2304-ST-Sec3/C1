@@ -9,6 +9,15 @@
 <body>
     <div>
         <h1>Lista de consumos</h1>
+
+        <!-- Agregar la barra de búsqueda -->
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Ingresa el número de identidad del cliente" id="numDocumento">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" onclick="buscarConsumos()">Buscar</button>
+            </div>
+        </div>
+
         <table class="table table-hover table-bordered">
             <thead class="thead-dark">
                 <tr>
@@ -35,10 +44,17 @@
             </tbody>
         </table>
         <a th:href="@{/}" class="btn btn-primary">Volver</a>
-        <a th:href="@{consumos/bar/new}" class = "btn btn-primary">Añadir producto de bar</a>
-        <a th:href="@{consumos/restaurante/new}" class = "btn btn-primary">Añadir producto de restaurante</a>
-        <a th:href="@{consumos/tienda/new}" class = "btn btn-primary">Añadir producto de tienda</a>
-        <a th:href="@{consumos/supermercado/new}" class = "btn btn-primary">Añadir producto de supermercado</a>
+        <a th:href="@{consumos/bar/new}" class="btn btn-primary">Añadir producto de bar</a>
+        <a th:href="@{consumos/restaurante/new}" class="btn btn-primary">Añadir producto de restaurante</a>
+        <a th:href="@{consumos/tienda/new}" class="btn btn-primary">Añadir producto de tienda</a>
+        <a th:href="@{consumos/supermercado/new}" class="btn btn-primary">Añadir producto de supermercado</a>
     </div>
-</body>
+
+    <!-- JavaScript para realizar la búsqueda -->
+    <script>
+        function buscarConsumos() {
+            var numDocumento = document.getElementById("numDocumento").value;
+            window.location.href = "/consumoscliente/" + numDocumento;
+        }
+    </script></body>
 </html>

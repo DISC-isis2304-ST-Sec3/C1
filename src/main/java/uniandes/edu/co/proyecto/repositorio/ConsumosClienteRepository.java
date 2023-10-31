@@ -10,6 +10,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import uniandes.edu.co.proyecto.modelo.Consumos;
 public interface ConsumosClienteRepository extends JpaRepository<Consumos, Integer> {
+     
+    @Query(value = "SELECT * FROM Consumos", nativeQuery = true )
+    Collection<Consumos> darConsumos();
+
     
     @Query(value = "SELECT *\r\n" + //
                     "FROM consumos c\r\n" + //
