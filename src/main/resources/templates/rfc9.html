@@ -1,15 +1,55 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consumo</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
-</head>
-<body>
-    <div>
-        <h1>Consultar consumo en HOTELANDES</h1>
-        
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Consumo</title>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+    </head>
+    <body>
+        <div>
+            <h1>Consultar consumo en HOTELANDES</h1>
+            <br>
+            <div class="row p-5 justify-content-around">
+                <div class="column p-5 text-center">
+                    <form th:action="@{/rfc9/exe/ordered}" method="get">
+
+                        <h5>Seleccione una columna para ordenar</h5>
+                        <br>
+                        <label class="col-form-label" for="filtro">Criterio de ordenamiento</label>
+                        <select class="form-control" id="filtro" name="filtro" required>
+                            <option value="nombre">Nombre</option>
+                            <option value="numDoc">Número de documento</option>
+                            <option value="fecha">Fecha</option>
+                        </select><br>
+                        <div class="text-center">
+                            <input type="submit" value="Ordenar" class="btn btn-primary">
+                            <a th:href="@{/rfc9/exe/grouped}" class="btn btn-primary">Agrupar</a>
+                        </div>
+                    </br>
+                </form>
+            </div>
+
+            <div class="column p-5">
+                <form th:action="@{/rfc9/exe/orderedgrouped}" method="get">
+
+                    <h5>Seleccione una columna para agrupar y ordenar</h5>
+                    <br>
+                    <label class="col-form-label" for="filtro">Criterio de ordenamiento</label>
+                    <select class="form-control" id="filtro" name="filtro" required>
+                        <option value="nombre">Nombre</option>
+                        <option value="numDoc">Número de documento</option>
+                        <option value="servicio">Servicio</option>
+                    </select><br>
+                    <div class="text-center">
+                        <input type="submit" value="Ordenar y agrupar" class="btn btn-primary">
+                    </div>
+                </br>
+            </form>
+
+                </div>
+            </div>
+            <br><br>
         <table class="table table-hover table-bordered">
             <thead class="thead-dark">
                 <tr>
@@ -31,9 +71,6 @@
             </tbody>
         </table>
 
-        <a th:href="@{/rfc9/exe/grouped}" class="btn btn-primary">Agrupar</a>
-        <a th:href="@{/rfc9/exe/ordered}" class="btn btn-primary">Ordenar</a>
-        <a th:href="@{/rfc9/exe/orderedgrouped}" class="btn btn-primary">Agrupar y ordenar</a>
         <a th:href="@{/rfc9}" class="btn btn-primary">Volver</a>
     </div>
 </body>

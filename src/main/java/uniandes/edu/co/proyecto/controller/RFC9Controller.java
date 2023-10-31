@@ -7,12 +7,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestParam;
 import uniandes.edu.co.proyecto.repositorio.RFC9Repository;
 
 @Controller
 public class RFC9Controller {
+
+    public static LocalDate fechaInicial;
+    public static LocalDate fechaFinal;
+    public static String tipo;
 
     @Autowired
     private RFC9Repository rfc9Repository;
@@ -28,23 +31,20 @@ public class RFC9Controller {
         model.addAttribute("fechaI", fechaI);
         model.addAttribute("fechaO", fechaO);
         model.addAttribute("tipo", tipo);
-        LocalDate fechaInicial = LocalDate.parse(fechaI);
-        LocalDate fechaFinal = LocalDate.parse(fechaO);
+        RFC9Controller.fechaInicial = LocalDate.parse(fechaI);
+        RFC9Controller.fechaFinal = LocalDate.parse(fechaO);
+        RFC9Controller.tipo = tipo;
 
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yy");
         String fechaFormateadaI = fechaInicial.format(formato);
         String fechaFormateadaO = fechaFinal.format(formato);
-        System.out.println(fechaFormateadaI);
         Collection<Object[]> rta = rfc9Repository.darRtaBase(fechaFormateadaI, fechaFormateadaO, tipo);
         model.addAttribute("rta", rta);
         return "rfc9";
     }
 
     @GetMapping("/rfc9/exe/grouped")
-    public String preRfc9Group(Model model, @ModelAttribute("fechaI") String fechaI, @ModelAttribute("fechaO") String fechaO,
-    @ModelAttribute("tipo") String tipo) {
-        LocalDate fechaInicial = LocalDate.parse(fechaI);
-        LocalDate fechaFinal = LocalDate.parse(fechaO);
+    public String preRfc9Group(Model model) {
 
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yy");
         String fechaFormateadaI = fechaInicial.format(formato);
@@ -55,29 +55,41 @@ public class RFC9Controller {
     }
 
     @GetMapping("/rfc9/exe/ordered")
-    public String preRfc9Ordered(Model model, @ModelAttribute("fechaI") String fechaI, @ModelAttribute("fechaO") String fechaO,
-    @ModelAttribute("tipo") String tipo) {
-        LocalDate fechaInicial = LocalDate.parse(fechaI);
-        LocalDate fechaFinal = LocalDate.parse(fechaO);
+    public String preRfc9Ordered(Model model, @RequestParam(value = "filtro") String filtro) {
 
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yy");
         String fechaFormateadaI = fechaInicial.format(formato);
         String fechaFormateadaO = fechaFinal.format(formato);
-        Collection<Object[]> rta = rfc9Repository.darRtaOrdenada(fechaFormateadaI, fechaFormateadaO, tipo);
+        Collection<Object[]> rta;
+        if (filtro.equals("nombre")) {
+            rta = rfc9Repository.darRtaOrdenadaNobre(fechaFormateadaI, fechaFormateadaO, tipo);
+        }
+        else if (filtro.equals("numDoc")) {
+            rta = rfc9Repository.darRtaOrdenadaNumDoc(fechaFormateadaI, fechaFormateadaO, tipo);
+        }
+        else {
+            rta = rfc9Repository.darRtaOrdenadaFecha(fechaFormateadaI, fechaFormateadaO, tipo);
+        }
         model.addAttribute("rta", rta);
         return "rfc9Order";
     }
 
     @GetMapping("/rfc9/exe/orderedgrouped")
-    public String preRfc9OrderedGrouped(Model model, @ModelAttribute("fechaI") String fechaI, @ModelAttribute("fechaO") String fechaO,
-    @ModelAttribute("tipo") String tipo) {
-        LocalDate fechaInicial = LocalDate.parse(fechaI);
-        LocalDate fechaFinal = LocalDate.parse(fechaO);
+    public String preRfc9OrderedGrouped(Model model, @RequestParam(value = "filtro") String filtro) {
 
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yy");
         String fechaFormateadaI = fechaInicial.format(formato);
         String fechaFormateadaO = fechaFinal.format(formato);
-        Collection<Object[]> rta = rfc9Repository.darRtaAgrupadaYOrdenada(fechaFormateadaI, fechaFormateadaO, tipo);
+        Collection<Object[]> rta;
+        if (filtro.equals("nombre")) {
+            rta = rfc9Repository.darRtaAgrupadaYOrdenadaNombre(fechaFormateadaI, fechaFormateadaO, tipo);
+        }
+        else if (filtro.equals("numDoc")) {
+            rta = rfc9Repository.darRtaAgrupadaYOrdenadanumDoc(fechaFormateadaI, fechaFormateadaO, tipo);
+        }
+        else {
+            rta = rfc9Repository.darRtaAgrupadaYOrdenadaServicio(fechaFormateadaI, fechaFormateadaO, tipo);
+        }
         model.addAttribute("rta", rta);
         return "rfc9Group";
     }
