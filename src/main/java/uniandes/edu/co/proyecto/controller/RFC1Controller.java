@@ -16,7 +16,11 @@ public class RFC1Controller {
 
     @GetMapping("/rfc1")
     public String rfc1(Model model) {
+        long tiempoInicio = System.nanoTime();
         Collection<Object[]> rta = rfc1Repository.darConsumos();
+        long tiempoFin = System.nanoTime();
+        double tiempoEjecucion = (tiempoFin - tiempoInicio)/1000000000.0;
+        model.addAttribute("tiempo", String.format("%.3f", tiempoEjecucion));
         model.addAttribute("Costo", rta);
         
         return "rfc1";

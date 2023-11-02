@@ -14,7 +14,11 @@ public class RFC8Controller {
 
     @GetMapping("/rfc8")
     public String rfc8(Model model) {
+        long tiempoFin = System.nanoTime();
         Object[] rta = rfc8Repository.darRta();
+        long tiempoInicio = System.nanoTime();
+        double tiempoEjecucion = (tiempoInicio - tiempoFin)/1000000000.0;
+        model.addAttribute("tiempo", String.format("%.3f", tiempoEjecucion));
         model.addAttribute("rta", rta);
         return "rfc8";
     }

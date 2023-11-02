@@ -16,7 +16,11 @@ public class RFC12Controller {
 
     @GetMapping("/rfc12")
     public String rfc12(Model model) {
+        long tiempoFin = System.nanoTime();
         Collection<Object[]> rta = rfc12Repository.darRta();
+        long tiempoInicio = System.nanoTime();
+        double tiempoEjecucion = (tiempoInicio - tiempoFin)/1000000000.0;
+        model.addAttribute("tiempo", String.format("%.3f", tiempoEjecucion));
         model.addAttribute("rta", rta);
         
         return "rfc12";

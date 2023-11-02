@@ -38,6 +38,7 @@ public class RFC9Controller {
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yy");
         String fechaFormateadaI = fechaInicial.format(formato);
         String fechaFormateadaO = fechaFinal.format(formato);
+        long tiempoFin = System.nanoTime();
         Collection<Object[]> rta = rfc9Repository.darRtaBase(fechaFormateadaI, fechaFormateadaO, tipo);
         model.addAttribute("rta", rta);
         return "rfc9";
@@ -49,6 +50,7 @@ public class RFC9Controller {
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yy");
         String fechaFormateadaI = fechaInicial.format(formato);
         String fechaFormateadaO = fechaFinal.format(formato);
+        long tiempoFin = System.nanoTime();
         Collection<Object[]> rta = rfc9Repository.darRtaAgrupada(fechaFormateadaI, fechaFormateadaO, tipo);
         model.addAttribute("rta", rta);
         return "rfc9Group";
@@ -61,6 +63,7 @@ public class RFC9Controller {
         String fechaFormateadaI = fechaInicial.format(formato);
         String fechaFormateadaO = fechaFinal.format(formato);
         Collection<Object[]> rta;
+        long tiempoFin = System.nanoTime();
         if (filtro.equals("nombre")) {
             rta = rfc9Repository.darRtaOrdenadaNobre(fechaFormateadaI, fechaFormateadaO, tipo);
         }
@@ -81,6 +84,7 @@ public class RFC9Controller {
         String fechaFormateadaI = fechaInicial.format(formato);
         String fechaFormateadaO = fechaFinal.format(formato);
         Collection<Object[]> rta;
+        long tiempoFin = System.nanoTime();
         if (filtro.equals("nombre")) {
             rta = rfc9Repository.darRtaAgrupadaYOrdenadaNombre(fechaFormateadaI, fechaFormateadaO, tipo);
         }
@@ -90,6 +94,9 @@ public class RFC9Controller {
         else {
             rta = rfc9Repository.darRtaAgrupadaYOrdenadaServicio(fechaFormateadaI, fechaFormateadaO, tipo);
         }
+        long tiempoInicio = System.nanoTime();
+        double tiempoEjecucion = (tiempoInicio - tiempoFin)/1000000000.0;
+        model.addAttribute("tiempo", String.format("%.3f", tiempoEjecucion));
         model.addAttribute("rta", rta);
         return "rfc9Group";
     }

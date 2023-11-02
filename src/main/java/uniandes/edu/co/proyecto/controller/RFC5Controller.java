@@ -32,7 +32,11 @@ public class RFC5Controller {
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yy");
         String fechaFormateadaI = fechaInicial.format(formato);
         String fechaFormateadaO = fechaFinal.format(formato);
+        long tiempoFin = System.nanoTime();
         Collection<Object[]> rta = rfc5Repository.darConsumos(fechaFormateadaI, fechaFormateadaO, numDoc, tipoDoc);
+        long tiempoInicio = System.nanoTime();
+        double tiempoEjecucion = (tiempoInicio - tiempoFin)/1000000000.0;
+        model.addAttribute("tiempo", String.format("%.3f", tiempoEjecucion));
         model.addAttribute("rta", rta);
         return "rfc5";
     }

@@ -38,6 +38,7 @@ public class RFC10Controller {
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yy");
         String fechaFormateadaI = RFC10Controller.fechaInicial.format(formato);
         String fechaFormateadaO = RFC10Controller.fechaFinal.format(formato);
+        long tiempoFin = System.nanoTime();
         Collection<Object[]> rta = rfc10Repository.darRtaBase(fechaFormateadaI, fechaFormateadaO, tipo);
         model.addAttribute("rta", rta);
         return "rfc10";
@@ -50,6 +51,7 @@ public class RFC10Controller {
         String fechaFormateadaI = RFC10Controller.fechaInicial.format(formato);
         String fechaFormateadaO = RFC10Controller.fechaFinal.format(formato);
         Collection<Object[]> rta;
+        long tiempoFin = System.nanoTime();
         if (filtro.equals("nombre")) {
             rta = rfc10Repository.darRtaAgrupadaNombre(fechaFormateadaI, fechaFormateadaO, tipo);
         }
@@ -70,6 +72,7 @@ public class RFC10Controller {
         String fechaFormateadaI = RFC10Controller.fechaInicial.format(formato);
         String fechaFormateadaO = RFC10Controller.fechaFinal.format(formato);
         Collection<Object[]> rta;
+        long tiempoFin = System.nanoTime();
         if (filtro.equals("nombre")) {
             rta = rfc10Repository.darRtaOrdenadaNombre(fechaFormateadaI, fechaFormateadaO, tipo);
         }
@@ -93,6 +96,7 @@ public class RFC10Controller {
         String fechaFormateadaI = RFC10Controller.fechaInicial.format(formato);
         String fechaFormateadaO = RFC10Controller.fechaFinal.format(formato);
         Collection<Object[]> rta;
+        long tiempoFin = System.nanoTime();
         if (filtro.equals("nombre")) {
             rta = rfc10Repository.darRtaAgrupadaYOrdenadaNombre(fechaFormateadaI, fechaFormateadaO, tipo);
         }
@@ -105,6 +109,9 @@ public class RFC10Controller {
         else {
             rta = rfc10Repository.darRtaOrdenadaNumDoc(fechaFormateadaI, fechaFormateadaO, tipo);
         }
+        long tiempoInicio = System.nanoTime();
+        double tiempoEjecucion = (tiempoInicio - tiempoFin)/1000000000.0;
+        model.addAttribute("tiempo", String.format("%.3f", tiempoEjecucion));
         model.addAttribute("rta", rta);
         return "rfc10Group";
     }
