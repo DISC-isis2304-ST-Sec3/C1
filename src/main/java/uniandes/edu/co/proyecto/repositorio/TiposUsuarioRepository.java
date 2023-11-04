@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import uniandes.edu.co.proyecto.modelo.TiposUsuario;
 
-public interface TiposUsuarioRepository extends JpaRepository<TiposUsuario, Integer> {
+public interface TiposUsuarioRepository extends JpaRepository<TiposUsuario, String> {
     
     @Query(value = "SELECT * FROM TiposUsuario", nativeQuery = true )
     Collection<TiposUsuario> darTiposUsuario();
