@@ -26,8 +26,9 @@ public class RFC9Controller {
     }
 
     @GetMapping("/rfc9/exe")
-    public String preRfc9Save(Model model, @RequestParam(value = "fechaI") String fechaI, @RequestParam(value = "fechaO") String fechaO,
-    @RequestParam(value = "tipo") String tipo) {
+    public String preRfc9Save(Model model, @RequestParam(value = "fechaI") String fechaI,
+            @RequestParam(value = "fechaO") String fechaO,
+            @RequestParam(value = "tipo") String tipo) {
         model.addAttribute("fechaI", fechaI);
         model.addAttribute("fechaO", fechaO);
         model.addAttribute("tipo", tipo);
@@ -40,6 +41,9 @@ public class RFC9Controller {
         String fechaFormateadaO = fechaFinal.format(formato);
         long tiempoFin = System.nanoTime();
         Collection<Object[]> rta = rfc9Repository.darRtaBase(fechaFormateadaI, fechaFormateadaO, tipo);
+        long tiempoInicio = System.nanoTime();
+        double tiempoEjecucion = (tiempoInicio - tiempoFin) / 1000000000.0;
+        model.addAttribute("tiempo", String.format("%.3f", tiempoEjecucion));
         model.addAttribute("rta", rta);
         return "rfc9";
     }
@@ -52,6 +56,9 @@ public class RFC9Controller {
         String fechaFormateadaO = fechaFinal.format(formato);
         long tiempoFin = System.nanoTime();
         Collection<Object[]> rta = rfc9Repository.darRtaAgrupada(fechaFormateadaI, fechaFormateadaO, tipo);
+        long tiempoInicio = System.nanoTime();
+        double tiempoEjecucion = (tiempoInicio - tiempoFin) / 1000000000.0;
+        model.addAttribute("tiempo", String.format("%.3f", tiempoEjecucion));
         model.addAttribute("rta", rta);
         return "rfc9Group";
     }
@@ -66,13 +73,14 @@ public class RFC9Controller {
         long tiempoFin = System.nanoTime();
         if (filtro.equals("nombre")) {
             rta = rfc9Repository.darRtaOrdenadaNobre(fechaFormateadaI, fechaFormateadaO, tipo);
-        }
-        else if (filtro.equals("numDoc")) {
+        } else if (filtro.equals("numDoc")) {
             rta = rfc9Repository.darRtaOrdenadaNumDoc(fechaFormateadaI, fechaFormateadaO, tipo);
-        }
-        else {
+        } else {
             rta = rfc9Repository.darRtaOrdenadaFecha(fechaFormateadaI, fechaFormateadaO, tipo);
         }
+        long tiempoInicio = System.nanoTime();
+        double tiempoEjecucion = (tiempoInicio - tiempoFin) / 1000000000.0;
+        model.addAttribute("tiempo", String.format("%.3f", tiempoEjecucion));
         model.addAttribute("rta", rta);
         return "rfc9Order";
     }
@@ -87,19 +95,17 @@ public class RFC9Controller {
         long tiempoFin = System.nanoTime();
         if (filtro.equals("nombre")) {
             rta = rfc9Repository.darRtaAgrupadaYOrdenadaNombre(fechaFormateadaI, fechaFormateadaO, tipo);
-        }
-        else if (filtro.equals("numDoc")) {
+        } else if (filtro.equals("numDoc")) {
             rta = rfc9Repository.darRtaAgrupadaYOrdenadanumDoc(fechaFormateadaI, fechaFormateadaO, tipo);
-        }
-        else {
+        } else {
             rta = rfc9Repository.darRtaAgrupadaYOrdenadaServicio(fechaFormateadaI, fechaFormateadaO, tipo);
         }
+
         long tiempoInicio = System.nanoTime();
-        double tiempoEjecucion = (tiempoInicio - tiempoFin)/1000000000.0;
+        double tiempoEjecucion = (tiempoInicio - tiempoFin) / 1000000000.0;
         model.addAttribute("tiempo", String.format("%.3f", tiempoEjecucion));
         model.addAttribute("rta", rta);
         return "rfc9Group";
     }
 
-    
 }

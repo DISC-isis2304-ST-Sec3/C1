@@ -26,8 +26,9 @@ public class RFC10Controller {
     }
 
     @GetMapping("/rfc10/exe")
-    public String preRfc10Save(Model model, @RequestParam(value = "fechaI") String fechaI, @RequestParam(value = "fechaO") String fechaO,
-    @RequestParam(value = "tipo") String tipo) {
+    public String preRfc10Save(Model model, @RequestParam(value = "fechaI") String fechaI,
+            @RequestParam(value = "fechaO") String fechaO,
+            @RequestParam(value = "tipo") String tipo) {
         model.addAttribute("fechaI", fechaI);
         model.addAttribute("fechaO", fechaO);
         model.addAttribute("tipo", tipo);
@@ -40,6 +41,9 @@ public class RFC10Controller {
         String fechaFormateadaO = RFC10Controller.fechaFinal.format(formato);
         long tiempoFin = System.nanoTime();
         Collection<Object[]> rta = rfc10Repository.darRtaBase(fechaFormateadaI, fechaFormateadaO, tipo);
+        long tiempoInicio = System.nanoTime();
+        double tiempoEjecucion = (tiempoInicio - tiempoFin) / 1000000000.0;
+        model.addAttribute("tiempo", String.format("%.3f", tiempoEjecucion));
         model.addAttribute("rta", rta);
         return "rfc10";
     }
@@ -54,13 +58,14 @@ public class RFC10Controller {
         long tiempoFin = System.nanoTime();
         if (filtro.equals("nombre")) {
             rta = rfc10Repository.darRtaAgrupadaNombre(fechaFormateadaI, fechaFormateadaO, tipo);
-        }
-        else if (filtro.equals("tipoDoc")) {
+        } else if (filtro.equals("tipoDoc")) {
             rta = rfc10Repository.darRtaAgrupadaTipoDoc(fechaFormateadaI, fechaFormateadaO, tipo);
-        }
-        else {
+        } else {
             rta = rfc10Repository.darRtaAgrupadaCorreo(fechaFormateadaI, fechaFormateadaO, tipo);
         }
+        long tiempoInicio = System.nanoTime();
+        double tiempoEjecucion = (tiempoInicio - tiempoFin) / 1000000000.0;
+        model.addAttribute("tiempo", String.format("%.3f", tiempoEjecucion));
         model.addAttribute("rta", rta);
         return "rfc10Group";
     }
@@ -75,16 +80,16 @@ public class RFC10Controller {
         long tiempoFin = System.nanoTime();
         if (filtro.equals("nombre")) {
             rta = rfc10Repository.darRtaOrdenadaNombre(fechaFormateadaI, fechaFormateadaO, tipo);
-        }
-        else if (filtro.equals("numDoc")) {
+        } else if (filtro.equals("numDoc")) {
             rta = rfc10Repository.darRtaOrdenadaNumDoc(fechaFormateadaI, fechaFormateadaO, tipo);
-        }
-        else if (filtro.equals("tipoDoc")) {
+        } else if (filtro.equals("tipoDoc")) {
             rta = rfc10Repository.darRtaOrdenadaTipoDoc(fechaFormateadaI, fechaFormateadaO, tipo);
-        }
-        else {
+        } else {
             rta = rfc10Repository.darRtaOrdenadaCorreo(fechaFormateadaI, fechaFormateadaO, tipo);
         }
+        long tiempoInicio = System.nanoTime();
+        double tiempoEjecucion = (tiempoInicio - tiempoFin) / 1000000000.0;
+        model.addAttribute("tiempo", String.format("%.3f", tiempoEjecucion));
         model.addAttribute("rta", rta);
         return "rfc10Order";
     }
@@ -99,22 +104,18 @@ public class RFC10Controller {
         long tiempoFin = System.nanoTime();
         if (filtro.equals("nombre")) {
             rta = rfc10Repository.darRtaAgrupadaYOrdenadaNombre(fechaFormateadaI, fechaFormateadaO, tipo);
-        }
-        else if (filtro.equals("tipoDoc")) {
+        } else if (filtro.equals("tipoDoc")) {
             rta = rfc10Repository.darRtaAgrupadaYOrdenadaTipoDoc(fechaFormateadaI, fechaFormateadaO, tipo);
-        }
-        else if (filtro.equals("correo")) {
+        } else if (filtro.equals("correo")) {
             rta = rfc10Repository.darRtaAgrupadaYOrdenadaCorreo(fechaFormateadaI, fechaFormateadaO, tipo);
-        }
-        else {
+        } else {
             rta = rfc10Repository.darRtaOrdenadaNumDoc(fechaFormateadaI, fechaFormateadaO, tipo);
         }
         long tiempoInicio = System.nanoTime();
-        double tiempoEjecucion = (tiempoInicio - tiempoFin)/1000000000.0;
+        double tiempoEjecucion = (tiempoInicio - tiempoFin) / 1000000000.0;
         model.addAttribute("tiempo", String.format("%.3f", tiempoEjecucion));
         model.addAttribute("rta", rta);
         return "rfc10Group";
     }
 
-    
 }
