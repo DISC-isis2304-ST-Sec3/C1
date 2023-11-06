@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import uniandes.edu.co.proyecto.modelo.TiposHabitacion;
 
-public interface TiposHabitacionRepository extends JpaRepository<TiposHabitacion, Integer> {
+public interface TiposHabitacionRepository extends JpaRepository<TiposHabitacion, String> {
     
     @Query(value = "SELECT * FROM TiposHabitacion", nativeQuery = true )
     Collection<TiposHabitacion> darTiposHabitacion();

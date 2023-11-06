@@ -11,7 +11,7 @@ import org.springframework.data.repository.query.Param;
 import jakarta.transaction.Transactional;
 import uniandes.edu.co.proyecto.modelo.TiposServicio;
 
-public interface DescripcionServiciosRepository extends JpaRepository<TiposServicio, Integer> {
+public interface DescripcionServiciosRepository extends JpaRepository<TiposServicio, String> {
     
     @Query(value = "SELECT * FROM tiposServicio", nativeQuery = true )
     Collection<TiposServicio> darTiposServicio();
