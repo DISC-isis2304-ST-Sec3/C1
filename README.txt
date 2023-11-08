@@ -15,6 +15,4 @@ Entidad relación: abra en data modeler el archivo dmd dentro de la carpeta ./do
 Modelo Relacional: abra el excel (sugerido) o pdf dentro de la carpeta docs llamado ModeloRelacional
 Diagrama de clases: abra el archivo png o pdf (sugerido) dentro de la carpeta docs llamado modeloConcepual
 
-Para ejecutar las pruebas:
 
-abra en sql developer el archivo pruebas.sql y ejecute los bloques de código entre comentarios
