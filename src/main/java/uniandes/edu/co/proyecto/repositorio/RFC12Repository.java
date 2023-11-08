@@ -42,12 +42,12 @@ public interface RFC12Repository extends JpaRepository<Consumos, Integer> {
             "        r.usuarios_num_documento, r.usuarios_correo  " + //
             ") " + //
             "SELECT c.nombre, c.tipo_doc, c.num_doc, c.correo, 'Estancias por trimestre' AS motivo " + //
-            "FROM ReservasPorTrimestre c WHERE ROWNUM <= 1000" + //
+            "FROM ReservasPorTrimestre c WHERE ROWNUM <= 300 " + //
             "GROUP BY c.nombre, c.tipo_doc, c.num_doc, c.correo, c.num_reservas " + //
             "HAVING count(*) >= 4 " + //
             "UNION ALL " + //
             "SELECT cc.nombre, cc.tipo_doc, cc.num_doc, cc.correo, 'Consumos costosos' AS motivo " + //
-            "FROM ConsumosCostosos cc WHERE ROWNUM <= 600" + //
+            "FROM ConsumosCostosos cc WHERE ROWNUM <= 300" + //
             "UNION ALL " + //
             "SELECT rl.nombre, rl.tipo_doc, rl.num_doc, rl.correo, 'Reservas mayores a 4H' AS motivo " + //
             "FROM ReservasLargas rl WHERE ROWNUM <= 300", nativeQuery = true)
