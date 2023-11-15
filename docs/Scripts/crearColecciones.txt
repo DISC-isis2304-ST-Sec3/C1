@@ -1,0 +1,160 @@
+
+db.tipos_habitacion.drop();
+db.habitaciones.drop();
+db.consumos.drop();
+db.servicios.drop();
+db.clientes.drop();
+db.reservas.drop();
+db.checkIn.drop();
+db.checkOut.drop();
+
+db.createCollection("tipos_habitacion", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: [ "tipo" ],
+      properties: {
+        tipo: {
+          bsonType: "string"
+        }
+      }
+    }
+  }
+});
+
+db.createCollection("habitaciones", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: [ "_id", "capacidad", "costo", "tipo", "comedor", "cocina", "jacuzzi" ],
+      properties: {
+        _id: {
+          bsonType: "double"
+        },
+        capacidad: {
+          bsonType: "double"
+        },
+        costo: {
+          bsonType: "double"
+        },
+        consumos: {
+          bsonType: "array"
+        },
+        tipo: {
+          bsonType: "string"
+        },
+      }
+    }
+  }
+});
+
+db.createCollection("consumos", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: [ "servicio", "fecha" ],
+      properties: {
+        servicio: {
+          bsonType: "object"
+        }
+      }
+    }
+  }
+});
+
+db.createCollection("servicios", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: [ "tipo", "costo" ],
+      properties: {
+        tipo: {
+          bsonType: "string"
+        },
+        costo: {
+          bsonType: "double"
+        },
+        descripcion: {
+          bsonType: "string"
+        }
+      }
+    }
+  }
+});
+
+db.createCollection("clientes", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: [ "tipoDocumento", "numDocumento", "nombre", "correo" ],
+      properties: {
+        tipoDocumento: {
+          bsonType: "string"
+        },
+        numDocumento: {
+          bsonType: "double"
+        },
+        nombre: {
+          bsonType: "string"
+        },
+        correo: {
+          bsonType: "string"
+        }
+      }
+    }
+  }
+});
+
+db.createCollection("reservas", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: [ "fechaEntrada", "fechaSalida", "numeroPersonas", "habitacion", "responsable" ],
+      properties: {
+        numeroPersonas: {
+          bsonType: "double"
+        },
+        habitacion: {
+          bsonType: "objectId"
+        },
+        responsable: {
+          bsonType: "object"
+        }
+      }
+    }
+  }
+});
+
+db.createCollection("checkIn", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: [ "reserva", "cliente", "fechaIngreso" ],
+      properties: {
+        reserva: {
+          bsonType: "object"
+        },
+        cliente: {
+          bsonType: "object"
+        }
+      }
+    }
+  }
+});
+
+db.createCollection("checkOut", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: [ "reserva", "habitacion", "fechaSalida" ],
+      properties: {
+        reserva: {
+          bsonType: "objectId"
+        },
+        habitacion: {
+          bsonType: "objectId"
+        }
+      }
+    }
+  }
+});
