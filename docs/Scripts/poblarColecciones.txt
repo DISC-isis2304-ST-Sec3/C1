@@ -67,34 +67,34 @@ db.servicios.insertMany([
 ]);
 
 db.consumos.insertMany([
-    {servicio: {tipo: "spa", costo: 10000.0, descripcion: "esto es un spa"}, fecha: "12/04/2023"},
-    {servicio: {tipo: "spa", costo: 10000.0, descripcion: "esto es un spa"}, fecha: "12/04/2023"},
-    {servicio: {tipo: "salon", costo: 150000.0, descripcion: "esto es un salon"}, fecha: "12/04/2023"},
-    {servicio: {tipo: "restaurante", costo: 35000.0, descripcion: "esto es un restaurante"}, fecha: "12/04/2023"},
-    {servicio: {tipo: "salon", costo: 150000.0, descripcion: "esto es un salon"}, fecha: "12/04/2023"},
-    {servicio: {tipo: "restaurante", costo: 35000.0, descripcion: "esto es un restaurante"}, fecha: "12/04/2023"},
-    {servicio: {tipo: "tienda", costo: 23000.0, descripcion: "esto es una tienda"}, fecha: "12/04/2023"},
-    {servicio: {tipo: "lavanderia", costo: 15000.0, descripcion: "esto es una lavanderia"}, fecha: "12/04/2023"}
+    {servicio: {tipo: "spa", costo: 10000.0, descripcion: "esto es un spa"}, fecha: ISODate("2023-11-15T12:00:00Z")},
+    {servicio: {tipo: "spa", costo: 10000.0, descripcion: "esto es un spa"}, fecha: ISODate("2023-11-15T12:00:00Z")},
+    {servicio: {tipo: "salon", costo: 150000.0, descripcion: "esto es un salon"}, fecha: ISODate("2023-11-15T12:00:00Z")},
+    {servicio: {tipo: "restaurante", costo: 35000.0, descripcion: "esto es un restaurante"}, fecha: ISODate("2023-11-15T12:00:00Z")},
+    {servicio: {tipo: "salon", costo: 150000.0, descripcion: "esto es un salon"}, fecha: ISODate("2023-11-15T12:00:00Z")},
+    {servicio: {tipo: "restaurante", costo: 35000.0, descripcion: "esto es un restaurante"}, fecha: ISODate("2023-11-15T12:00:00Z")},
+    {servicio: {tipo: "tienda", costo: 23000.0, descripcion: "esto es una tienda"}, fecha: ISODate("2023-11-15T12:00:00Z")},
+    {servicio: {tipo: "lavanderia", costo: 15000.0, descripcion: "esto es una lavanderia"}, fecha: ISODate("2023-11-15T12:00:00Z")}
 ]);
 
 db.habitaciones.updateMany({tipo:{tipo: "suite", jacuzzi: 1, comedor: 0, cocina: 0}},{$push:
     {consumos:
-        {servicio: {tipo: "spa", costo: 10000.0, descripcion: "esto es un spa"}, fecha: "12/04/2023"}    
+        {servicio: {tipo: "spa", costo: 10000.0, descripcion: "esto es un spa"}, fecha: ISODate("2023-11-15T12:00:00Z")}    
     }
 });
 db.habitaciones.updateMany({tipo:{tipo: "suite", jacuzzi: 1, comedor: 0, cocina: 0}},{$push:
     {consumos:
-        {servicio: {tipo: "salon", costo: 150000.0, descripcion: "esto es un salon"}, fecha: "12/04/2023"}    
+        {servicio: {tipo: "salon", costo: 150000.0, descripcion: "esto es un salon"}, fecha: ISODate("2023-11-15T12:00:00Z")}    
     }
 });
 db.habitaciones.updateMany({tipo:{tipo: "suite", jacuzzi: 1, comedor: 0, cocina: 0}},{$push:
     {consumos:
-        {servicio: {tipo: "restaurante", costo: 35000.0, descripcion: "esto es un restaurante"}, fecha: "12/04/2023"}    
+        {servicio: {tipo: "restaurante", costo: 35000.0, descripcion: "esto es un restaurante"}, fecha: ISODate("2023-11-15T12:00:00Z")}    
     }
 });
 db.habitaciones.updateMany({tipo:{tipo: "familiar", jacuzzi: 0, comedor: 1, cocina: 1}},{$push:
     {consumos:
-        {servicio: {tipo: "restaurante", costo: 35000.0, descripcion: "esto es un restaurante"}, fecha: "12/04/2023"}    
+        {servicio: {tipo: "restaurante", costo: 35000.0, descripcion: "esto es un restaurante"}, fecha: ISODate("2023-11-15T12:00:00Z")}    
     }
 });
 
@@ -112,29 +112,29 @@ db.reservas.insertMany([
     {
         numeroPersonas: 2,
         habitacion: db.habitaciones.findOne({numero: 1}, {_id:1})._id,
-        fechaEntrada: '01/01/2023',
-        fechaSalida: '22/01/2023',
+        fechaEntrada: ISODate("2023-01-04T12:00:00Z"),
+        fechaSalida: ISODate("2023-01-14T12:00:00Z"),
         responsable: {tipoDocumento: 'CC', numDocumento: 123456, nombre: 'Eduardo benitez', correo: 'e.benitez@gmail.com'}
     },
     {
         numeroPersonas: 2,
         habitacion: db.habitaciones.findOne({numero: 2}, {_id:1})._id,
-        fechaEntrada: '01/05/2023',
-        fechaSalida: '22/05/2023',
+        fechaEntrada: ISODate("2023-04-04T12:00:00Z"),
+        fechaSalida: ISODate("2023-04-14T12:00:00Z"),
         responsable: {tipoDocumento: 'pasaporte', numDocumento: 1786523, nombre: 'Leonardo Villegas', correo: 'l.villegas@gmail.com'}
     },
     {
         numeroPersonas: 2,
         habitacion: db.habitaciones.findOne({numero: 3}, {_id:1})._id,
-        fechaEntrada: '01/07/2023',
-        fechaSalida: '22/07/2023',
+        fechaEntrada: ISODate("2023-06-04T12:00:00Z"),
+        fechaSalida: ISODate("2023-06-14T12:00:00Z"),
         responsable: {tipoDocumento: 'CIF', numDocumento: 12333333, nombre: 'Gloria Trevi', correo: 'g.trevi@gmail.com'}
     },
     {
         numeroPersonas: 2,
         habitacion: db.habitaciones.findOne({numero: 4}, {_id:1})._id,
-        fechaEntrada: '01/09/2023',
-        fechaSalida: '22/09/2023',
+        fechaEntrada: ISODate("2023-08-04T12:00:00Z"),
+        fechaSalida: ISODate("2023-08-14T12:00:00Z"),
         responsable: {tipoDocumento: 'TI', numDocumento: 204812, nombre: 'Doris Rodriguez', correo: 'd.rodriguez@gmail.com'}
     }
 
