@@ -1,0 +1,60 @@
+-- RF1
+
+db.tipos_habitacion.insertOne(
+    {tipo: 1, jacuzzi: 1, comedor: 0, cocina: 0},
+);
+
+-- RF2
+
+db.habitaciones.insertOne(
+    {   numero: 1,
+        capacidad: 4,
+        costo: 700000.0,
+        tipo: "nice"
+    }
+);
+
+-- RF3
+
+db.servicios.insertOne(
+    {tipo: {nombre: "a"}, costo: 10000.0, descripcion: "esto es un spa"},
+);
+
+-- RF4
+
+db.reservas.insertOne(
+    {
+        numeroPersonas: 2,
+        habitacion: db.habitaciones.findOne({numero: 1}, {_id:1}),
+        fechaEntrada: '01/01/2023',
+        fechaSalida: '22/01/2023',
+        responsable: {tipoDocumento: 'CC', numDocumento: 123456, nombre: 'Eduardo benitez', correo: 'e.benitez@gmail.com'}
+    }
+);
+
+-- RF5
+
+db.checkIn.insertOne(
+    {
+        cliente: db.clientes.findOne({tipoDocumento: 'CC', numDocumento: 123456 }, {_id: 1}),
+        reserva: db.reservas.findOne({ responsable:{$eq: db.clientes.findOne({tipoDocumento:'CC', numDocumento:123456 }, { _id: 0 })}}),
+        fechaIngreso: db.reservas.findOne({ responsable:{$eq: db.clientes.findOne({tipoDocumento:'CC', numDocumento:123456 }, { _id: 0 })}}).fechaEntrada
+    }
+)
+
+-- RF6
+
+db.consumos.insertOne(
+    {servicio: "spa", fecha: "12/04/2023"},
+);
+
+-- RF7
+
+db.checkOut.insertOne(
+    {
+        habitacion: db.reservas.findOne({ responsable:{$eq: db.clientes.findOne({tipoDocumento:'CC', numDocumento:123456 }, { _id: 0 })}}).habitacion,
+        reserva: db.reservas.findOne({ responsable:{$eq: db.clientes.findOne({tipoDocumento:'CC', numDocumento:123456 }, { _id: 0 })}}),
+        fechaSalida: db.reservas.findOne({ responsable:{$eq: db.clientes.findOne({tipoDocumento:'CC', numDocumento:123456 }, { _id: 0 })}}).fechaSalida
+    }
+)
+

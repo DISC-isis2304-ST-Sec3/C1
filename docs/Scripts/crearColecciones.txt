@@ -26,23 +26,23 @@ db.createCollection("habitaciones", {
   validator: {
     $jsonSchema: {
       bsonType: "object",
-      required: [ "_id", "capacidad", "costo", "tipo", "comedor", "cocina", "jacuzzi" ],
+      required: ["numero", "capacidad", "costo", "tipo"],
       properties: {
-        _id: {
-          bsonType: "double"
+        numero: {
+          bsonType: "int"
         },
         capacidad: {
-          bsonType: "double"
+          bsonType: "int"
         },
         costo: {
-          bsonType: "double"
+          bsonType: "int"
         },
         consumos: {
           bsonType: "array"
         },
         tipo: {
-          bsonType: "string"
-        },
+          bsonType: "object"
+        }
       }
     }
   }
@@ -72,7 +72,7 @@ db.createCollection("servicios", {
           bsonType: "string"
         },
         costo: {
-          bsonType: "double"
+          bsonType: "int"
         },
         descripcion: {
           bsonType: "string"
@@ -92,7 +92,7 @@ db.createCollection("clientes", {
           bsonType: "string"
         },
         numDocumento: {
-          bsonType: "double"
+          bsonType: "int"
         },
         nombre: {
           bsonType: "string"
@@ -112,7 +112,7 @@ db.createCollection("reservas", {
       required: [ "fechaEntrada", "fechaSalida", "numeroPersonas", "habitacion", "responsable" ],
       properties: {
         numeroPersonas: {
-          bsonType: "double"
+          bsonType: "int"
         },
         habitacion: {
           bsonType: "objectId"
@@ -132,10 +132,10 @@ db.createCollection("checkIn", {
       required: [ "reserva", "cliente", "fechaIngreso" ],
       properties: {
         reserva: {
-          bsonType: "object"
+          bsonType: "objectId"
         },
         cliente: {
-          bsonType: "object"
+          bsonType: "objectId"
         }
       }
     }

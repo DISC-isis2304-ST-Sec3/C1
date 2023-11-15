@@ -1,0 +1,192 @@
+db.tipos_habitacion.insertMany([
+    {tipo: "suite", jacuzzi: 1, comedor: 0, cocina: 0},
+    {tipo: "familiar", jacuzzi: 0, comedor: 1, cocina: 1},
+    {tipo: "doble", jacuzzi: 1, comedor: 0, cocina: 0}
+]);
+
+db.habitaciones.insertMany([
+    {   numero: 1,
+        capacidad: 4,
+        costo: 700000.0,
+        tipo: {tipo: "suite", jacuzzi: 1, comedor: 0, cocina: 0}
+    },
+    {   numero: 2,
+        capacidad: 4,
+        costo: 700000.0,
+        tipo: {tipo: "suite", jacuzzi: 1, comedor: 0, cocina: 0}
+    },
+    {   numero: 3,
+        capacidad: 4,
+        costo: 700000.0,
+        tipo: {tipo: "suite", jacuzzi: 1, comedor: 0, cocina: 0}
+    },
+    {   numero: 4,
+        capacidad: 8,
+        costo: 900000.0,
+        tipo: {tipo: "familiar", jacuzzi: 0, comedor: 1, cocina: 1}
+    },
+    {   numero: 5,
+        capacidad: 8,
+        costo: 900000.0,
+        tipo: {tipo: "familiar", jacuzzi: 0, comedor: 1, cocina: 1}
+    },
+    {   numero: 6,
+        capacidad: 8,
+        costo: 900000.0,
+        tipo: {tipo: "familiar", jacuzzi: 0, comedor: 1, cocina: 1}
+    },
+    {   numero: 7,
+        capacidad: 5,
+        costo: 1000000.0,
+        tipo: {tipo: "doble", jacuzzi: 1, comedor: 0, cocina: 0}
+    },
+    {   numero: 8,
+        capacidad: 5,
+        costo: 1000000.0,
+        tipo: {tipo: "doble", jacuzzi: 1, comedor: 0, cocina: 0}
+    },
+    {   numero: 9,
+        capacidad: 5,
+        costo: 1000000.0,
+        tipo: {tipo: "doble", jacuzzi: 1, comedor: 0, cocina: 0}
+    },
+]);
+
+db.servicios.insertMany([
+    {tipo: "spa", costo: 10000.0, descripcion: "esto es un spa"},
+    {tipo: "bar", costo: 34000.0, descripcion: "esto es un bar"},
+    {tipo: "gym", costo: 0.0, descripcion: "esto es un gym"},
+    {tipo: "internet", costo: 0.0, descripcion: "esto es un internet"},
+    {tipo: "lavanderia", costo: 15000.0, descripcion: "esto es una lavanderia"},
+    {tipo: "piscina", costo: 0.0, descripcion: "esto es una piscina"},
+    {tipo: "prestamo", costo: 30000.0, descripcion: "esto es un prestamo"},
+    {tipo: "restaurante", costo: 35000.0, descripcion: "esto es un restaurante"},
+    {tipo: "salon", costo: 150000.0, descripcion: "esto es un salon"},
+    {tipo: "supermercado", costo: 25000.0, descripcion: "esto es un supermercado"},
+    {tipo: "tienda", costo: 23000.0, descripcion: "esto es una tienda"}
+]);
+
+db.consumos.insertMany([
+    {servicio: {tipo: "spa", costo: 10000.0, descripcion: "esto es un spa"}, fecha: "12/04/2023"},
+    {servicio: {tipo: "spa", costo: 10000.0, descripcion: "esto es un spa"}, fecha: "12/04/2023"},
+    {servicio: {tipo: "salon", costo: 150000.0, descripcion: "esto es un salon"}, fecha: "12/04/2023"},
+    {servicio: {tipo: "restaurante", costo: 35000.0, descripcion: "esto es un restaurante"}, fecha: "12/04/2023"},
+    {servicio: {tipo: "salon", costo: 150000.0, descripcion: "esto es un salon"}, fecha: "12/04/2023"},
+    {servicio: {tipo: "restaurante", costo: 35000.0, descripcion: "esto es un restaurante"}, fecha: "12/04/2023"},
+    {servicio: {tipo: "tienda", costo: 23000.0, descripcion: "esto es una tienda"}, fecha: "12/04/2023"},
+    {servicio: {tipo: "lavanderia", costo: 15000.0, descripcion: "esto es una lavanderia"}, fecha: "12/04/2023"}
+]);
+
+db.habitaciones.updateMany({tipo:{tipo: "suite", jacuzzi: 1, comedor: 0, cocina: 0}},{$push:
+    {consumos:
+        {servicio: {tipo: "spa", costo: 10000.0, descripcion: "esto es un spa"}, fecha: "12/04/2023"}    
+    }
+});
+db.habitaciones.updateMany({tipo:{tipo: "suite", jacuzzi: 1, comedor: 0, cocina: 0}},{$push:
+    {consumos:
+        {servicio: {tipo: "salon", costo: 150000.0, descripcion: "esto es un salon"}, fecha: "12/04/2023"}    
+    }
+});
+db.habitaciones.updateMany({tipo:{tipo: "suite", jacuzzi: 1, comedor: 0, cocina: 0}},{$push:
+    {consumos:
+        {servicio: {tipo: "restaurante", costo: 35000.0, descripcion: "esto es un restaurante"}, fecha: "12/04/2023"}    
+    }
+});
+db.habitaciones.updateMany({tipo:{tipo: "familiar", jacuzzi: 0, comedor: 1, cocina: 1}},{$push:
+    {consumos:
+        {servicio: {tipo: "restaurante", costo: 35000.0, descripcion: "esto es un restaurante"}, fecha: "12/04/2023"}    
+    }
+});
+
+db.clientes.insertMany([
+
+    {tipoDocumento: 'CC', numDocumento: 123456, nombre: 'Eduardo benitez', correo: 'e.benitez@gmail.com'},
+    {tipoDocumento: 'pasaporte', numDocumento: 1786523, nombre: 'Leonardo Villegas', correo: 'l.villegas@gmail.com'},
+    {tipoDocumento: 'CIF', numDocumento: 12333333, nombre: 'Gloria Trevi', correo: 'g.trevi@gmail.com'},
+    {tipoDocumento: 'TI', numDocumento: 204812, nombre: 'Doris Rodriguez', correo: 'd.rodriguez@gmail.com'}
+
+]);
+
+db.reservas.insertMany([
+
+    {
+        numeroPersonas: 2,
+        habitacion: db.habitaciones.findOne({numero: 1}, {_id:1})._id,
+        fechaEntrada: '01/01/2023',
+        fechaSalida: '22/01/2023',
+        responsable: {tipoDocumento: 'CC', numDocumento: 123456, nombre: 'Eduardo benitez', correo: 'e.benitez@gmail.com'}
+    },
+    {
+        numeroPersonas: 2,
+        habitacion: db.habitaciones.findOne({numero: 2}, {_id:1})._id,
+        fechaEntrada: '01/05/2023',
+        fechaSalida: '22/05/2023',
+        responsable: {tipoDocumento: 'pasaporte', numDocumento: 1786523, nombre: 'Leonardo Villegas', correo: 'l.villegas@gmail.com'}
+    },
+    {
+        numeroPersonas: 2,
+        habitacion: db.habitaciones.findOne({numero: 3}, {_id:1})._id,
+        fechaEntrada: '01/07/2023',
+        fechaSalida: '22/07/2023',
+        responsable: {tipoDocumento: 'CIF', numDocumento: 12333333, nombre: 'Gloria Trevi', correo: 'g.trevi@gmail.com'}
+    },
+    {
+        numeroPersonas: 2,
+        habitacion: db.habitaciones.findOne({numero: 4}, {_id:1})._id,
+        fechaEntrada: '01/09/2023',
+        fechaSalida: '22/09/2023',
+        responsable: {tipoDocumento: 'TI', numDocumento: 204812, nombre: 'Doris Rodriguez', correo: 'd.rodriguez@gmail.com'}
+    }
+
+]);
+
+db.checkIn.insertMany([
+
+    {
+        cliente: db.clientes.findOne({tipoDocumento: 'CC', numDocumento: 123456 }, {_id: 1})._id,
+        reserva: db.reservas.findOne({ responsable:{$eq: db.clientes.findOne({tipoDocumento:'CC', numDocumento:123456 }, { _id: 0 })}})._id,
+        fechaIngreso: db.reservas.findOne({ responsable:{$eq: db.clientes.findOne({tipoDocumento:'CC', numDocumento:123456 }, { _id: 0 })}}).fechaEntrada
+    },
+    {
+        cliente: db.clientes.findOne({tipoDocumento: 'pasaporte', numDocumento: 1786523 }, {_id: 1})._id,
+        reserva: db.reservas.findOne({ responsable:{$eq: db.clientes.findOne({tipoDocumento:'pasaporte', numDocumento:1786523 }, { _id: 0 })}})._id,
+        fechaIngreso: db.reservas.findOne({ responsable:{$eq: db.clientes.findOne({tipoDocumento:'pasaporte', numDocumento:1786523 }, { _id: 0 })}}).fechaEntrada
+    },
+    {
+        cliente: db.clientes.findOne({tipoDocumento: 'CIF', numDocumento: 12333333 }, {_id: 1})._id,
+        reserva: db.reservas.findOne({ responsable:{$eq: db.clientes.findOne({tipoDocumento:'CIF', numDocumento:12333333 }, { _id: 0 })}})._id,
+        fechaIngreso: db.reservas.findOne({ responsable:{$eq: db.clientes.findOne({tipoDocumento:'CIF', numDocumento:12333333 }, { _id: 0 })}}).fechaEntrada
+    },
+    {
+        cliente: db.clientes.findOne({tipoDocumento: 'TI', numDocumento: 204812 }, {_id: 1})._id,
+        reserva: db.reservas.findOne({ responsable:{$eq: db.clientes.findOne({tipoDocumento:'TI', numDocumento:204812 }, { _id: 0 })}})._id,
+        fechaIngreso: db.reservas.findOne({ responsable:{$eq: db.clientes.findOne({tipoDocumento:'TI', numDocumento:204812 }, { _id: 0 })}}).fechaEntrada
+    }
+
+])
+
+db.checkOut.insertMany([
+
+    {
+        habitacion: db.reservas.findOne({ responsable:{$eq: db.clientes.findOne({tipoDocumento:'CC', numDocumento:123456 }, { _id: 0 })}}).habitacion,
+        reserva: db.reservas.findOne({ responsable:{$eq: db.clientes.findOne({tipoDocumento:'CC', numDocumento:123456 }, { _id: 0 })}})._id,
+        fechaSalida: db.reservas.findOne({ responsable:{$eq: db.clientes.findOne({tipoDocumento:'CC', numDocumento:123456 }, { _id: 0 })}}).fechaSalida
+    },
+    {
+        habitacion: db.reservas.findOne({ responsable:{$eq: db.clientes.findOne({tipoDocumento:'pasaporte', numDocumento:1786523 }, { _id: 0 })}}).habitacion,
+        reserva: db.reservas.findOne({ responsable:{$eq: db.clientes.findOne({tipoDocumento:'pasaporte', numDocumento:1786523 }, { _id: 0 })}})._id,
+        fechaSalida: db.reservas.findOne({ responsable:{$eq: db.clientes.findOne({tipoDocumento:'pasaporte', numDocumento:1786523 }, { _id: 0 })}}).fechaSalida
+    },
+    {
+        habitacion: db.reservas.findOne({ responsable:{$eq: db.clientes.findOne({tipoDocumento:'CIF', numDocumento:12333333 }, { _id: 0 })}}).habitacion,
+        reserva: db.reservas.findOne({ responsable:{$eq: db.clientes.findOne({tipoDocumento:'CIF', numDocumento:12333333 }, { _id: 0 })}})._id,
+        fechaSalida: db.reservas.findOne({ responsable:{$eq: db.clientes.findOne({tipoDocumento:'CIF', numDocumento:12333333 }, { _id: 0 })}}).fechaSalida
+    },
+    {
+        habitacion: db.reservas.findOne({ responsable:{$eq: db.clientes.findOne({tipoDocumento:'TI', numDocumento:204812 }, { _id: 0 })}}).habitacion,
+        reserva: db.reservas.findOne({ responsable:{$eq: db.clientes.findOne({tipoDocumento:'TI', numDocumento:204812 }, { _id: 0 })}})._id,
+        fechaSalida: db.reservas.findOne({ responsable:{$eq: db.clientes.findOne({tipoDocumento:'TI', numDocumento:204812 }, { _id: 0 })}}).fechaSalida
+    }
+
+])
+
