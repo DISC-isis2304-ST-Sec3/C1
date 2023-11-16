@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear checkIn</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+
+<body>
+    <br>
+    <div class="container border border-2 w-70">
+
+        <h1 class="text">Crear checkIn</h1>
+
+        <form th:action="@{/checkIn/new/save}" method="post">
+
+            <label class="col-form-label" for="fecha">Fecha del ingreso</label>
+            <input class="form-control" type="date" id="fecha" name="fecha" value="fecha"><br>
+
+            <label class="col-form-label" for="idReserva">Id de reserva</label>
+            <select class="form-control" id="idReserva" name="idReserva" required>
+                <option th:each="reserva : ${reservas}" th:value="${reserva.id}"
+                    th:text="${reserva.id}"></option>
+            </select><br>
+
+            <label class="col-form-label" for="idCliente">Cliente</label>
+            <select class="form-control" id="idCliente" name="idCliente" required>
+                <option th:each="cliente : ${clientes}" th:value="${cliente.id}"
+                    th:text="${cliente.nombre}"></option>
+            </select><br>
+
+            <br>
+            <div class="text-center">
+                <input type="submit" value="Guardar" class="btn btn-primary">
+                <a th:href="@{/checkIn}" class="btn btn-primary">Cancelar</a>
+            </div>
+            </br>
+        </form>
+    </div>
+</body>
+
+</html>

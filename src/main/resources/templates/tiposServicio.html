@@ -26,7 +26,7 @@
                         <td th:text="${tipoServicio.descripcion}"></td>
                         <td>
                             <a th:href="@{'/tiposServicio/' + ${tipoServicio.tipo} +  '/edit'}"
-                               >Editar</a><br>
+                               >Editar</a>
                             <a th:href="@{'/tiposServicio/' + ${tipoServicio.tipo} + '/delete'}"
                                onclick="return confirm('¿Está seguro de borrar el servicio?')"
                                >Eliminar</a>
