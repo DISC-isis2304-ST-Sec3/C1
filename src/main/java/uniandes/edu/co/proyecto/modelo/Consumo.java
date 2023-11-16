@@ -1,10 +1,14 @@
 package uniandes.edu.co.proyecto.modelo;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document("consumos")
 public class Consumo {
+
+    @Id
+    private String id;
 
     @DBRef
     private Servicio servicio;
@@ -19,6 +23,14 @@ public class Consumo {
 
     public Consumo() {
         super();
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public Servicio getServicio() {

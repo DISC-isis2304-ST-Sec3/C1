@@ -4,8 +4,13 @@ import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import jakarta.persistence.Id;
+
 @Document("reservas")
 public class Reserva {
+
+    @Id
+    private String id;
 
     private String fechaEntrada;
     private String fechaSalida;
@@ -27,6 +32,14 @@ public class Reserva {
 
     public Reserva() {
         super();
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getFechaEntrada() {
