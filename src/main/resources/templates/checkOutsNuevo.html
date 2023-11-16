@@ -14,17 +14,17 @@
 
     <form th:action="@{/checkOuts/new/save}" method="post">
         
-        <label class="col-form-label" for="fechaSalida">Fecha del checkOut</label>
-        <input class="form-control" type="date" id="fechaSalida" name="fechaSalida" value = 0 ><br>
+        <label class="col-form-label" for="fecha">Fecha del checkOut</label>
+        <input class="form-control" type="date" id="fecha" name="fecha" value = 0 ><br>
 
-        <label class="col-form-label" for="habitaciones">Número de habitación</label>
-        <select class="form-control" id="habitaciones" name="habitacionesId" required>
-            <option th:each="habitacionesId : ${habitaciones}" th:value="${habitacionesId.id}" th:text="${habitacionesId.id}"></option>
+        <label class="col-form-label" for="idHabitacion">Número de habitación</label>
+        <select class="form-control" id="idHabitacion" name="idHabitacion" required>
+            <option th:each="habitacion : ${habitacions}" th:value="${habitacion.id}" th:text="${habitacion.numero}"></option>
         </select><br>
 
-        <label class="col-form-label" for="reservas">Número de id de reserva</label>
-        <select class="form-control" id="reservas" name="reservasId" required>
-            <option th:each="reservasId : ${reservas}" th:value="${reservasId.id}" th:text="${reservasId.id}"></option>
+        <label class="col-form-label" for="idReserva">Número de id de reserva</label>
+        <select class="form-control" id="idReserva" name="idReserva" required>
+            <option th:each="reserva : ${reservas}" th:value="${reserva.id}" th:text="${reserva.id}"></option>
         </select><br>
 
         <br>

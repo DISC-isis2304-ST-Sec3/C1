@@ -8,12 +8,12 @@
 </head>
 <body>
     <div>
-        <h1>Lista de check outs</h1>
+        <h1>Lista de checkOuts</h1>
         <table class="table table-hover table-bordered">
             <thead class="thead-dark">
                 <tr>
                     <th>ID reserva</th>
-                    <th>Num. habitación</th>
+                    <th>ID habitación</th>
                     <th>Fecha de salida</th>
                     <th>Acciones</th>
                 </tr>
@@ -21,15 +21,13 @@
             <tbody>
                 <th:block th:each="checkOut : ${checkOuts}">
                     <tr>
-                        <td th:text="${checkOut.pk.reservas_id.id}"></td>
-                        <td th:text="${checkOut.pk.habitaciones_id.id}"></td>
-                        <td th:text="${checkOut.fecha_salida}"></td>
+                        <td th:text="${checkOut.reserva}"></td>
+                        <td th:text="${checkOut.habitacion}"></td>
+                        <td th:text="${checkOut.fechaSalida}"></td>
                         <td>
-                            <a th:href="@{'/checkOuts/' + ${checkOut.pk.habitaciones_id.id} +  '/consumos'}"
-                               >Ver total a pagar</a><br>
-                            <a th:href="@{'/checkOuts/' + ${checkOut.pk.reservas_id.id} +  '/edit'}"
-                               >Editar</a><br>
-                            <a th:href="@{'/checkOuts/' + ${checkOut.pk.reservas_id.id} + '/delete'}"
+                            <a th:href="@{'/checkOuts/' + ${checkOut.id} +  '/edit'}"
+                               >Editar</a>
+                            <a th:href="@{'/checkOuts/' + ${checkOut.id} + '/delete'}"
                                onclick="return confirm('¿Está seguro de borrar el checkOut?')">Eliminar</a>
                         </td>
                     </tr>

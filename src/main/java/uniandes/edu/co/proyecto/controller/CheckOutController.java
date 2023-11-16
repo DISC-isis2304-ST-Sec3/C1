@@ -14,64 +14,64 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import org.springframework.ui.Model;
 
-import uniandes.edu.co.proyecto.modelo.CheckIn;
+import uniandes.edu.co.proyecto.modelo.CheckOut;
 import uniandes.edu.co.proyecto.modelo.Reserva;
-import uniandes.edu.co.proyecto.repositorio.CheckInRepository;
-import uniandes.edu.co.proyecto.repositorio.ClienteRepository;
+import uniandes.edu.co.proyecto.repositorio.CheckOutRepository;
+import uniandes.edu.co.proyecto.repositorio.HabitacionRepository;
 import uniandes.edu.co.proyecto.repositorio.ReservaRepository;
 
 @Controller
-public class CheckInController {
+public class CheckOutController {
 
     @Autowired
-    private CheckInRepository repository;
+    private CheckOutRepository repository;
 
     @Autowired
-    private ClienteRepository clienteRepository;
+    private HabitacionRepository habitacionRepository;
 
     @Autowired
     private ReservaRepository reservaRepository;
 
-    @GetMapping("/checkIn")
-    public String checkIn(Model model) {
-        model.addAttribute("checkIns", repository.findAllCheckInes());
-        return "checkIn";
+    @GetMapping("/checkOuts")
+    public String checkOut(Model model) {
+        model.addAttribute("checkOuts", repository.findAllCheckOuts());
+        return "checkOuts";
     }
 
-    @GetMapping("/checkIn/new")
-    public String checkInForm(Model model) {
-        model.addAttribute("clientes", clienteRepository.findAllClientees());
+    @GetMapping("/checkOuts/new")
+    public String checkOutForm(Model model) {
+        model.addAttribute("habitacions", habitacionRepository.findAllHabitaciones());
         model.addAttribute("reservas", reservaRepository.findAllReservaes());
-        return "checkInNuevo";
+        return "checkOutsNuevo";
     }
 
-    @PostMapping("/checkIn/new/save")
-    public String checkInGuardar(@RequestParam(value = "idCliente") String idCliente,
+    @PostMapping("/checkOuts/new/save")
+    public String checkOutGuardar(@RequestParam(value = "idHabitacion") String idHabitacion,
             @RequestParam(value = "idReserva") String idReserva, @RequestParam(value = "fecha") String fecha) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate fechaI = LocalDate.parse(fecha, formatter);
-        ObjectId objectIdCli = new ObjectId(idCliente);
+        ObjectId objectIdCli = new ObjectId(idHabitacion);
         ObjectId objectIdRes = new ObjectId(idReserva);
         Optional<Reserva> res = reservaRepository.findById(idReserva);
-        if (res.isPresent() && fechaI.equals(res.get().getFechaEntrada())) {
-            repository.save(new CheckIn(objectIdRes, objectIdCli, fechaI));
-            return "redirect:/checkIn";
+        if (res.isPresent() && fechaI.equals(res.get().getFechaSalida())) {
+            repository.save(new CheckOut(objectIdRes, objectIdCli, fechaI));
+            return "redirect:/checkOuts";
         }
         return "redirect:/error";
     }
 
-    @GetMapping("/checkIn/{id}/edit")
-    public String checkInEditarForm(@PathVariable("id") String id, Model model) {
+    @GetMapping("/checkOuts/{id}/edit")
+    public String checkOutEditarForm(@PathVariable("id") String id, Model model) {
         repository.deleteById(id);
-        model.addAttribute("clientes", clienteRepository.findAllClientees());
+        model.addAttribute("habitacions", habitacionRepository.findAllHabitaciones());
         model.addAttribute("reservas", reservaRepository.findAllReservaes());
-        return "checkInNuevo";
+        return "checkOutsNuevo";
     }
 
-    @GetMapping("/checkIn/{id}/delete")
-    public String checkInEliminar(@PathVariable("id") String id) {
+    @GetMapping("/checkOuts/{id}/delete")
+    public String checkOutEliminar(@PathVariable("id") String id) {
         repository.deleteById(id);
-        return "redirect:/checkIn";
+        return "redirect:/checkOuts";
     }
 
 }
