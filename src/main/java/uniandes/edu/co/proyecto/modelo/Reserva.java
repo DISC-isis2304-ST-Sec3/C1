@@ -1,5 +1,7 @@
 package uniandes.edu.co.proyecto.modelo;
 
+import java.time.LocalDate;
+
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -12,15 +14,15 @@ public class Reserva {
     @Id
     private String id;
 
-    private String fechaEntrada;
-    private String fechaSalida;
+    private LocalDate fechaEntrada;
+    private LocalDate fechaSalida;
     private int numeroPersonas;
     private ObjectId habitacion;
 
     @DBRef
     private Cliente responsable;
 
-    public Reserva(String fechaEntrada, String fechaSalida, int numeroPersonas, ObjectId habitacion,
+    public Reserva(LocalDate fechaEntrada, LocalDate fechaSalida, int numeroPersonas, ObjectId habitacion,
             Cliente responsable) {
         super();
         this.fechaEntrada = fechaEntrada;
@@ -42,19 +44,19 @@ public class Reserva {
         this.id = id;
     }
 
-    public String getFechaEntrada() {
+    public LocalDate getFechaEntrada() {
         return fechaEntrada;
     }
 
-    public void setFechaEntrada(String fechaEntrada) {
+    public void setFechaEntrada(LocalDate fechaEntrada) {
         this.fechaEntrada = fechaEntrada;
     }
 
-    public String getFechaSalida() {
+    public LocalDate getFechaSalida() {
         return fechaSalida;
     }
 
-    public void setFechaSalida(String fechaSalida) {
+    public void setFechaSalida(LocalDate fechaSalida) {
         this.fechaSalida = fechaSalida;
     }
 

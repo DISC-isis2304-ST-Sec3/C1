@@ -31,12 +31,16 @@
         <label class="col-form-label" for="fechaSalida">Fecha de salida</label>
         <input class="form-control" type="date" id="fechaSalida" name="fechaSalida" required><br>
         <label class="col-form-label" for="numPersonas">Cantidad de personas de la reserva</label>
-        <input class="form-control" type="text" id="numPersonas" name="numPersonas" required><br>
-        
-        
-        <label class="col-form-label" for="planesConsumo">Plan de consumo</label>
-        <select class="form-control" id="planesConsumo" name="planConsumo" required>
-            <option th:each="planConsumo : ${planesConsumo}" th:value="${planConsumo.id}" th:text="${planConsumo.nombre}"></option>
+        <input class="form-control" type="number" id="numPersonas" name="numPersonas" required><br>
+        <label class="col-form-label" for="nombre">Nombre</label>
+        <input class="form-control" type="text" id="nombre" name="nombre" required><br>
+        <label class="col-form-label" for="correo">correo</label>
+        <input class="form-control" type="text" id="correo" name="correo" required><br>
+
+        <label class="col-form-label" for="hab">Habitación</label>
+        <select class="form-control" id="hab" name="hab" required>
+            <option th:each="hab : ${habitaciones}" th:value="${hab.id}"
+                th:text="${hab.numero}"></option>
         </select><br>
 
 

@@ -1,5 +1,7 @@
 package uniandes.edu.co.proyecto.modelo;
 
+import java.time.LocalDate;
+
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -12,9 +14,9 @@ public class CheckIn {
 
     private ObjectId reserva;
     private ObjectId cliente;
-    private String fechaIngreso;
+    private LocalDate fechaIngreso;
 
-    public CheckIn(ObjectId reserva, ObjectId cliente, String fechaIngreso) {
+    public CheckIn(ObjectId reserva, ObjectId cliente, LocalDate fechaIngreso) {
         super();
         this.reserva = reserva;
         this.cliente = cliente;
@@ -49,11 +51,11 @@ public class CheckIn {
         this.cliente = cliente;
     }
 
-    public String getFechaIngreso() {
+    public LocalDate getFechaIngreso() {
         return fechaIngreso;
     }
 
-    public void setFechaIngreso(String fechaIngreso) {
+    public void setFechaIngreso(LocalDate fechaIngreso) {
         this.fechaIngreso = fechaIngreso;
     }
 

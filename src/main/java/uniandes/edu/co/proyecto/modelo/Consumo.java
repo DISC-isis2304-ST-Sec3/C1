@@ -1,5 +1,7 @@
 package uniandes.edu.co.proyecto.modelo;
 
+import java.time.LocalDate;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -13,9 +15,9 @@ public class Consumo {
     @DBRef
     private Servicio servicio;
 
-    private String fecha;
+    private LocalDate fecha;
 
-    public Consumo(Servicio servicio, String fecha) {
+    public Consumo(Servicio servicio, LocalDate fecha) {
         super();
         this.servicio = servicio;
         this.fecha = fecha;
@@ -41,11 +43,11 @@ public class Consumo {
         this.servicio = servicio;
     }
 
-    public String getFecha() {
+    public LocalDate getFecha() {
         return fecha;
     }
 
-    public void setFecha(String fecha) {
+    public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
     }
 
