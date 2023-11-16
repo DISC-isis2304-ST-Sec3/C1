@@ -1,48 +1,48 @@
 package uniandes.edu.co.proyecto.modelo;
 
-import java.sql.Date;
+import org.bson.types.ObjectId;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-
-@Entity
-@Table(name = "checkin")
+@Document("checkIn")
 public class CheckIn {
 
-        @EmbeddedId
-        private CheckInPK pk;
+    private ObjectId reserva;
+    private ObjectId cliente;
+    private String fechaIngreso;
 
-        private Date fecha_ingreso;
+    public CheckIn(ObjectId reserva, ObjectId cliente, String fechaIngreso) {
+        super();
+        this.reserva = reserva;
+        this.cliente = cliente;
+        this.fechaIngreso = fechaIngreso;
+    }
 
-        public CheckIn(Reservas reservas_id, int informacionclientes_num_documento, String informacionclientes_tipo_documento, Date fecha_ingreso) {
-            InformacionClientes informacionClientesPK = new InformacionClientes();
-            informacionClientesPK.setPk(new InformacionClientesPK(informacionclientes_tipo_documento, informacionclientes_num_documento));
-            this.pk = new CheckInPK(reservas_id, informacionClientesPK);
-            this.fecha_ingreso = fecha_ingreso;
-        }
-        
+    public CheckIn() {
+        super();
+    }
 
-        public CheckIn() {
-            ;
-        }
+    public ObjectId getReserva() {
+        return reserva;
+    }
 
-        public CheckInPK getPk() {
-            return pk;
-        }
+    public void setReserva(ObjectId reserva) {
+        this.reserva = reserva;
+    }
 
-        public void setPk(CheckInPK pk) {
-            this.pk = pk;
-        }
+    public ObjectId getCliente() {
+        return cliente;
+    }
 
-        public Date getFecha_ingreso() {
-            return fecha_ingreso;
-        }
+    public void setCliente(ObjectId cliente) {
+        this.cliente = cliente;
+    }
 
-        public void setFecha_ingreso(Date fecha_ingreso) {
-            this.fecha_ingreso = fecha_ingreso;
-        }
+    public String getFechaIngreso() {
+        return fechaIngreso;
+    }
 
-        
+    public void setFechaIngreso(String fechaIngreso) {
+        this.fechaIngreso = fechaIngreso;
+    }
 
 }
