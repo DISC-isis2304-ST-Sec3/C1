@@ -18,9 +18,8 @@
             margin-top: 50px;
         }
 
-        /* Oculta los botones al inicio */
-        #buttons-admin, #buttons-client, #buttons-receptionist, #buttons-employee {
-            display: none;
+        .btn-primary{
+            text-align: left;
         }
     </style>
 </head>
@@ -29,92 +28,28 @@
         <h1>Hotel de los Andes</h1>
         <h3>Bienvenidos!</h3>
         <img th:src="@{/images/A.png}" width="350" alt="logo">
-
-        <select id="userType" onchange="toggleButtons()">
-            <option >   ---   </option>
-            <option value="admin">Administrador</option>
-            <option value="client">Cliente</option>
-            <option value="receptionist">Recepcionista</option>
-            <option value="employee">Empleado</option>
-            <option value="manager">Gerente</option>
-        </select>
         
-        <div class="mt-4" id="buttons-admin">
-            <a th:href="@{/tiposUsuario}" class="btn btn-primary btn-block mb-2">Tipos de usuario</a>
-            <a th:href="@{/usuarios}" class="btn btn-primary btn-block">Usuarios</a>
-            <a th:href="@{/tiposHabitacion}" class="btn btn-primary btn-block">Tipos de habitación</a>
-            <a th:href="@{/habitaciones}" class="btn btn-primary btn-block">Habitaciones</a>
-            <a th:href="@{/planesConsumo}" class="btn btn-primary btn-block">Planes de consumo</a>
-            <a th:href="@{/tiposServicio}" class="btn btn-primary btn-block">Tipos de servicio</a>
+        <div class = "row">
             
-            
-        </div>
-        
-        <div class="mt-4" id="buttons-client">
-            <a th:href="@{/reservas}" class="btn btn-primary btn-block">Reservas</a>
-            <a th:href="@{/reservasServicio}" class="btn btn-primary btn-block">Reservas de servicio</a>
-        </div>
-        
-        <div class="mt-4" id="buttons-receptionist">
-            <a th:href="@{/checkOuts}" class="btn btn-primary btn-block">checkOuts</a>
-            <a th:href="@{/rfc9}" class="btn btn-primary btn-block">RFC9</a>
-            <a th:href="@{/rfc10}" class="btn btn-primary btn-block">RFC10</a>
-        </div>
-        
-        <div class="mt-4" id="buttons-employee">
-            <a th:href="@{/consumos}" class="btn btn-primary btn-block">registrar consumos</a>
-            <a th:href="@{/consumoscliente}" class="btn btn-primary btn-block">registrar consumos al cliente</a>
-        </div>
-        
-        <div class="mt-4" id="buttons-manager">
-            <div class = "row">
-
-                <div class = "column p-3" >
-                    <a th:href="@{/rfc1}" class="btn btn-primary btn-block">RFC1</a>
-                    <a th:href="@{/rfc2}" class="btn btn-primary btn-block">RFC2</a>
-                    <a th:href="@{/rfc3}" class="btn btn-primary btn-block">RFC3</a>
-                    <a th:href="@{/rfc4}" class="btn btn-primary btn-block">RFC4</a>
-                </div>
-                <div class = "column p-3" >
-                    <a th:href="@{/rfc5}" class="btn btn-primary btn-block">RFC5</a>
-                    <a th:href="@{/rfc6}" class="btn btn-primary btn-block">RFC6</a>
-                    <a th:href="@{/rfc7}" class="btn btn-primary btn-block">RFC7</a>
-                    <a th:href="@{/rfc8}" class="btn btn-primary btn-block">RFC8</a>
-                </div>
-                <div class = "column p-3" >
-                    <a th:href="@{/rfc9}" class="btn btn-primary btn-block">RFC9</a>
-                    <a th:href="@{/rfc10}" class="btn btn-primary btn-block">RFC10</a>
-                    <a th:href="@{/rfc11}" class="btn btn-primary btn-block">RFC11</a>
-                    <a th:href="@{/rfc12}" class="btn btn-primary btn-block">RFC12</a>
-    
-                </div>
+            <div class = "column p-4" >
+                <a th:href="@{/tiposHabitacion}" class="btn btn-primary btn-block">RF1. Tipos de habitación</a>
+                <a th:href="@{/habitaciones}" class="btn btn-primary btn-block">RF2. Habitaciones</a>
+                <a th:href="@{/tiposServicio}" class="btn btn-primary btn-block">RF3. Tipos de servicio</a>
+                <a th:href="@{/reservas}" class="btn btn-primary btn-block">RF4. Reservas</a>
+                <a th:href="@{/checkIn}" class="btn btn-primary btn-block">RF5. CheckIn</a>
+                <a th:href="@{/consumos}" class="btn btn-primary btn-block">RF6. Registrar consumos</a>
+                <a th:href="@{/checkOut}" class="btn btn-primary btn-block">RF7. CheckOut</a>
+            </div>
+            <div class = "column p-4" >
+                <a th:href="@{/rfc1}" class="btn btn-secondary btn-block">RFC1. Dinero por habitación</a>
+                <a th:href="@{/rfc2}" class="btn btn-secondary btn-block">RFC2. Índice de ocupación</a>
+                <a th:href="@{/rfc3}" class="btn btn-secondary btn-block">RFC3. Consumo de un cliente</a>
+                <a th:href="@{/rfc4}" class="btn btn-secondary btn-block">RFC4. Avanzado a seleccionar</a>
+            </div>
 
             </div>
-        </div>
         
     </div>
     
-    <script>
-        function toggleButtons() {
-            var userType = document.getElementById("userType").value;
-            
-            document.getElementById("buttons-manager").style.display = "none";
-            document.getElementById("buttons-admin").style.display = "none";
-            document.getElementById("buttons-client").style.display = "none";
-            document.getElementById("buttons-receptionist").style.display = "none";
-
-            if (userType === "admin") {
-                document.getElementById("buttons-admin").style.display = "block";
-            } else if (userType === "client") {
-                document.getElementById("buttons-client").style.display = "block";
-            } else if (userType === "receptionist") {
-                document.getElementById("buttons-receptionist").style.display = "block";
-            } else if (userType === "employee") {
-                document.getElementById("buttons-employee").style.display = "block";
-            } else if (userType === "manager") {
-                document.getElementById("buttons-manager").style.display = "block";
-            }
-        }
-    </script>
 </body>
 </html>
