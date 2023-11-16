@@ -22,14 +22,14 @@
             <tbody>
                 <th:block th:each="habitaciones : ${habitaciones}">
                     <tr>
-                        <td th:text="${habitaciones.id}"></td>
+                        <td th:text="${habitaciones.numero}"></td>
                         <td th:text="${habitaciones.capacidad}"></td>
                         <td th:text="${habitaciones.costo}"></td>
-                        <td th:text="${habitaciones.tiposHabitacion_tipo.tipo}"></td>
+                        <td th:text="${habitaciones.tipo.tipo}"></td>
                         <td>
-                            <a th:href="@{'/habitaciones/' + ${habitaciones.id} +  '/edit'}"
+                            <a th:href="@{'/habitaciones/' + ${habitaciones.numero} +  '/edit'}"
                                >Editar</a>
-                            <a th:href="@{'/habitaciones/' + ${habitaciones.id} + '/delete'}"
+                            <a th:href="@{'/habitaciones/' + ${habitaciones.numero} + '/delete'}"
                                onclick="return confirm('¿Está seguro de borrar la habitación?')">Eliminar</a>
                         </td>
                     </tr>

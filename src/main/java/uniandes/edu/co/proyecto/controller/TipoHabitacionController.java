@@ -45,7 +45,6 @@ public class TipoHabitacionController {
 
     @GetMapping("/tiposHabitacion/{tipo}/delete")
     public String eliminarTipoHabitacion(@PathVariable String tipo) {
-        System.out.println(tipo);
         repository.deleteByTipo(tipo);
         return "redirect:/tiposHabitacion";
     }

@@ -1,19 +1,23 @@
 package uniandes.edu.co.proyecto.modelo;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document("habitaciones")
 public class Habitacion {
 
+    @Id
+    private String id;
+
     private int numero;
     private int capacidad;
-    private double costo;
+    private int costo;
 
     @DBRef
     private TipoHabitacion tipo;
 
-    public Habitacion(int numero, int capacidad, double costo, TipoHabitacion tipo) {
+    public Habitacion(int numero, int capacidad, int costo, TipoHabitacion tipo) {
         super();
         this.numero = numero;
         this.capacidad = capacidad;
@@ -41,11 +45,11 @@ public class Habitacion {
         this.capacidad = capacidad;
     }
 
-    public double getCosto() {
+    public int getCosto() {
         return costo;
     }
 
-    public void setCosto(double costo) {
+    public void setCosto(int costo) {
         this.costo = costo;
     }
 

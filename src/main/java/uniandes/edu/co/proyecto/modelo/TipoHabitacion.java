@@ -1,9 +1,13 @@
 package uniandes.edu.co.proyecto.modelo;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document("tipos_habitacion")
 public class TipoHabitacion {
+
+    @Id
+    private String id;
 
     private String tipo;
     private int jacuzzi;
@@ -20,6 +24,14 @@ public class TipoHabitacion {
 
     public TipoHabitacion() {
         super();
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getTipo() {

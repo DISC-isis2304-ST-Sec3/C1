@@ -13,18 +13,18 @@ public interface TipoHabitacionRepository extends MongoRepository<TipoHabitacion
     TipoHabitacion save(TipoHabitacion tipoHabitacion);
 
     // READ
-    @Query("{ 'tipo' : ?0 }")
+    @Query(value = "{ tipo : ?0 }")
     TipoHabitacion findByTipo(String tipo);
 
     @Query("{}")
     List<TipoHabitacion> findAllTiposHabitacion();
 
-    // UPDATE
-    @Query("{ 'tipo' : ?0 }")
-    TipoHabitacion updateTipoHabitacion(String tipo, TipoHabitacion tipoHabitacion);
-
     // DELETE
     @Query(value = "{ 'tipo' : ?0 }", delete = true)
     void deleteByTipo(String tipo);
+
+    // UPDATE
+    @Query("{ 'tipo' : ?0 }")
+    TipoHabitacion updateTipoHabitacion(String tipo, TipoHabitacion tipoHabitacion);
 
 }
