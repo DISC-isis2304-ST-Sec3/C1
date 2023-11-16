@@ -13,6 +13,7 @@
             <thead class="thead-dark">
                 <tr>
                     <th>Tipo de servicio</th>
+                    <th>Costo</th>
                     <th>Descripción</th>
                     <th>Acciones</th>
                 </tr>
@@ -21,21 +22,21 @@
                 <th:block th:each="tipoServicio : ${tiposServicio}">
                     <tr>
                         <td th:text="${tipoServicio.tipo}"></td>
+                        <td th:text="'$ '+${tipoServicio.costo}"></td>
                         <td th:text="${tipoServicio.descripcion}"></td>
                         <td>
-                            <a th:href="@{'/tiposServicio/' + ${tipoServicio.tipo} +  '/new'}"
-                               >Nueva descripción</a><br>
                             <a th:href="@{'/tiposServicio/' + ${tipoServicio.tipo} +  '/edit'}"
-                               >Editar descripción</a><br>
+                               >Editar</a><br>
                             <a th:href="@{'/tiposServicio/' + ${tipoServicio.tipo} + '/delete'}"
-                               onclick="return confirm('¿Está seguro de borrar la descripción?')"
-                               >Eliminar descripción</a>
+                               onclick="return confirm('¿Está seguro de borrar el servicio?')"
+                               >Eliminar</a>
                         </td>
                     </tr>
                 </th:block>
             </tbody>
         </table>
         <a th:href="@{/}" class="btn btn-primary">Volver</a>
+        <a th:href="@{tiposServicio/new}" class="btn btn-primary">Añadir servicio</a>
     </div>
 </body>
 </html>

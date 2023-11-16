@@ -3,22 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear tipos de habitación</title>
+    <title>Crear servicios</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
 </head>
 <body>
     <br>
     <div class="container border border-2 w-70">    
 
-    <h1 class="text">Cambiar descripción del servicio</h1>
+    <h1 class="text">Crear servicio</h1>
 
-    <form th:action="@{/tiposServicio/{tipo}/new/save}" method="post">
+    <form th:action="@{/tiposServicio/new/save}" method="post">
         
+        <label class="col-form-label" for="tipo">Tipo</label>
+        <input class="form-control" type="text" id="tipo" name="tipo" required><br>
+        <label class="col-form-label" for="costo">Costo</label>
+        <input class="form-control" type="number" id="costo" name="costo" required><br>
         <label class="col-form-label" for="descripcion">Descripción</label>
         <input class="form-control" type="text" id="descripcion" name="descripcion" required><br>
 
         <div class="text-center">
-        <input type="submit" value="Guardar descripción" class="btn btn-primary">
+        <input type="submit" value="Guardar" class="btn btn-primary">
         <a th:href="@{/tiposServicio}" class="btn btn-primary">Cancelar</a>
         </div>
     </br>

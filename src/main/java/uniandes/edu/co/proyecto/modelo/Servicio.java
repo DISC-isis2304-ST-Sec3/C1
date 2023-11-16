@@ -10,10 +10,10 @@ public class Servicio {
     private String id;
 
     private String tipo;
-    private double costo;
+    private int costo;
     private String descripcion;
 
-    public Servicio(String tipo, double costo, String descripcion) {
+    public Servicio(String tipo, int costo, String descripcion) {
         super();
         this.tipo = tipo;
         this.costo = costo;
@@ -40,11 +40,11 @@ public class Servicio {
         this.tipo = tipo;
     }
 
-    public double getCosto() {
+    public int getCosto() {
         return costo;
     }
 
-    public void setCosto(double costo) {
+    public void setCosto(int costo) {
         this.costo = costo;
     }
 
