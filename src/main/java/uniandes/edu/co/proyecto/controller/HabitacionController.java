@@ -1,5 +1,7 @@
 package uniandes.edu.co.proyecto.controller;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -41,7 +43,7 @@ public class HabitacionController {
             @ModelAttribute("capacidad") int capacidad, @ModelAttribute("costo") int costo,
             @ModelAttribute("tipoHabitacion") String tipoHabitacion) {
         TipoHabitacion tipo = tiposHabitacionRepository.findByTipo(tipoHabitacion);
-        repository.save(new Habitacion(id, capacidad, costo, tipo));
+        repository.save(new Habitacion(id, capacidad, costo, tipo, new ArrayList<>()));
         return "redirect:/habitaciones";
     }
 
