@@ -1,5 +1,7 @@
 package uniandes.edu.co.proyecto.modelo;
 
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -16,13 +18,16 @@ public class Habitacion {
 
     @DBRef
     private TipoHabitacion tipo;
+    @DBRef
+    private List<Consumo> consumos;
 
-    public Habitacion(int numero, int capacidad, int costo, TipoHabitacion tipo) {
+    public Habitacion(int numero, int capacidad, int costo, TipoHabitacion tipo, List<Consumo> consumos) {
         super();
         this.numero = numero;
         this.capacidad = capacidad;
         this.costo = costo;
         this.tipo = tipo;
+        this.consumos = consumos;
     }
 
     public Habitacion() {
@@ -67,6 +72,14 @@ public class Habitacion {
 
     public void setTipo(TipoHabitacion tipo) {
         this.tipo = tipo;
+    }
+
+    public List<Consumo> getConsumos() {
+        return consumos;
+    }
+
+    public void setConsumos(List<Consumo> consumos) {
+        this.consumos = consumos;
     }
 
 }

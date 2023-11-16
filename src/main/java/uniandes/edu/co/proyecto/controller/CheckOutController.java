@@ -2,6 +2,7 @@ package uniandes.edu.co.proyecto.controller;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Optional;
 
 import org.bson.types.ObjectId;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.ui.Model;
 
 import uniandes.edu.co.proyecto.modelo.CheckOut;
+import uniandes.edu.co.proyecto.modelo.Habitacion;
 import uniandes.edu.co.proyecto.modelo.Reserva;
 import uniandes.edu.co.proyecto.repositorio.CheckOutRepository;
 import uniandes.edu.co.proyecto.repositorio.HabitacionRepository;
@@ -53,8 +55,12 @@ public class CheckOutController {
         ObjectId objectIdCli = new ObjectId(idHabitacion);
         ObjectId objectIdRes = new ObjectId(idReserva);
         Optional<Reserva> res = reservaRepository.findById(idReserva);
+        Optional<Habitacion> hab = habitacionRepository.findById(idHabitacion);
         if (res.isPresent() && fechaI.equals(res.get().getFechaSalida())) {
             repository.save(new CheckOut(objectIdRes, objectIdCli, fechaI));
+            if (hab.isPresent()) {
+                hab.get().setConsumos(new ArrayList<>());
+            }
             return "redirect:/checkOuts";
         }
         return "redirect:/error";

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear consumo</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+
+<body>
+    <br>
+    <div class="container border border-2" style="width: 30vw;">
+
+        <h1 class="text">Asociar consumo a habitación</h1>
+
+        <form th:action="@{'/consumos/'+ ${Cid} +'/associate/save'}" method="get">
+
+            <label class="col-form-label" for="idHab">Habitación</label>
+            <select class="form-control" id="idHab" name="idHab" required>
+                <option th:each="habitacion : ${habitaciones}" th:value="${habitacion.id}" th:text="${habitacion.numero}"></option>
+            </select>
+            <br>
+            <div class="text-center">
+                <input type="submit" value="Guardar" class="btn btn-primary">
+                <a th:href="@{/consumos}" class="btn btn-primary">Cancelar</a>
+            </div>
+            </br>
+        </form>
+    </div>
+</body>
+
+</html>

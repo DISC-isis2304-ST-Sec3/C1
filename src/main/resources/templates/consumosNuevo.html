@@ -8,31 +8,24 @@
 </head>
 <body>
     <br>
-    <div class="container border border-2 w-70">    
+    <div class="container border border-2" style="width: 30vw;">    
 
-    <h1 class="text">Registrar consumo</h1>
+    <h1 class="text">Crear consumo</h1>
 
-    <form th:action="@{'/consumos/' + ${tipoServ} + '/new/save'}" method="post">
+    <form th:action="@{'/consumos/new/save'}" method="post">
         
-        <label class="col-form-label" for="idHab">Habitación</label>
-        <select class="form-control" id="idHab" name="idHab" required>
-            <option th:each="habitacion : ${habitaciones}" th:value="${habitacion.id}" th:text="${habitacion.id}"></option>
-        </select>
+        <label class="col-form-label" for="idHab">Fecha</label>
+        <input class="form-control" type="date" id="fecha" name="fecha">
         <br>
         
-        <label class="col-form-label" for="nombreProd">Habitación</label>
-        <select class="form-control" id="nombreProd" name="nombreProd" required>
-            <option th:each="producto : ${productos}" th:value="${producto.nombre}" th:text="${producto.nombre}"></option>
+        <label class="col-form-label" for="idServicio">Servicio</label>
+        <select class="form-control" id="idServicio" name="idServicio" required>
+            <option th:each="servicio : ${servicios}" th:value="${servicio.id}" th:text="${servicio.tipo}"></option>
         </select>
-        <br>
-        
-        <label class="col-form-label" for="descripcion">Descripción</label>
-        <input class="form-control" type="text" id="descripcion" name="descripcion" ><br>
-        
         <br>
         <div class="text-center">
-        <input type="submit" value="Guardar" class="btn btn-primary">
-        <a th:href="@{/habitaciones}" class="btn btn-primary">Cancelar</a>
+            <input type="submit" value="Guardar" class="btn btn-primary">
+            <a th:href="@{/consumos}" class="btn btn-primary">Cancelar</a>
         </div>
     </br>
     </form>
