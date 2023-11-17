@@ -3,22 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tipos servicio</title>
+    <title>RFC1</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
 </head>
 <body>
     <div>
         <h1>Mostrar el dinero recolectado por servicios en cada habitación en el último año</h1>
-        <h5 th:text="${'Tiempo de carga: '+ tiempo + 's'}"></h5>
         <table class="table table-hover table-bordered">
             <thead class="thead-dark">
                 <tr>
-                    <th>Id de habitación</th>
+                    <th>Número de habitación</th>
                     <th>Costo total de servicios consumidos en el último año</th>
                 </tr>
             </thead>
             <tbody>
-                <th:block th:each="dato : ${Costo}">
+                <th:block th:each="dato : ${rta}">
                     <tr>
                         <td th:text="${dato[0]}"></td>
                         <td th:text="'$ ' + ${dato[1]}"></td>
