@@ -118,6 +118,20 @@ db.reservas.insertMany([
     },
     {
         numeroPersonas: 2,
+        habitacion: db.habitaciones.findOne({numero: 1}, {_id:1})._id,
+        fechaEntrada: ISODate("2023-06-04T12:00:00Z"),
+        fechaSalida: ISODate("2023-06-14T12:00:00Z"),
+        responsable: {tipoDocumento: 'CC', numDocumento: 123456, nombre: 'Eduardo benitez', correo: 'e.benitez@gmail.com'}
+    },
+    {
+        numeroPersonas: 2,
+        habitacion: db.habitaciones.findOne({numero: 1}, {_id:1})._id,
+        fechaEntrada: ISODate("2023-11-04T12:00:00Z"),
+        fechaSalida: ISODate("2023-11-14T12:00:00Z"),
+        responsable: {tipoDocumento: 'CC', numDocumento: 123456, nombre: 'Eduardo benitez', correo: 'e.benitez@gmail.com'}
+    },
+    {
+        numeroPersonas: 2,
         habitacion: db.habitaciones.findOne({numero: 2}, {_id:1})._id,
         fechaEntrada: ISODate("2023-04-04T12:00:00Z"),
         fechaSalida: ISODate("2023-04-14T12:00:00Z"),
