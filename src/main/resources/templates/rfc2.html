@@ -8,23 +8,20 @@
 </head>
 <body>
     <div>
-        <h1>Mostrar los 20 servicios más populares</h1>
-        <h5 th:text="${'Tiempo de carga: '+ tiempo + 's'}"></h5>
+        <h1>Mostrar el índice de ocupación de cada una de las habitaciones del hotel en el último año de operación</h1>
         
         <table class="table table-hover table-bordered">
             <thead class="thead-dark">
                 <tr>
-                    <th>Top</th>
-                    <th>Servicio</th>
-                    <th>Cantidad de veces usado</th>
+                    <th>Número de habitación</th>
+                    <th>Índice de ocupación del 2023</th>
                 </tr>
             </thead>
             <tbody>
-                <th:block th:each="dato, iterStat : ${rta}">
+                <th:block th:each="dato : ${rta}">
                     <tr>
-                        <td th:text="${iterStat.count}"></td>
                         <td th:text="${dato[0]}"></td>
-                        <td th:text="${dato[1]}"></td>
+                        <td th:text="${dato[1] + '%'}"></td>
                     </tr>
                 </th:block>
             </tbody>
