@@ -16,4 +16,7 @@ public interface CheckInRepository extends MongoRepository<CheckIn, String> {
     @Query("{}")
     List<CheckIn> findAllCheckInes();
 
+    @Query("{ 'cliente' : ?0 }")
+    List<CheckIn> findAllCheckInsByClient(String idCliente);
+
 }
