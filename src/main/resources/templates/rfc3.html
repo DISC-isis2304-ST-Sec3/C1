@@ -3,25 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Índice de ocupación</title>
+    <title>RFC3</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
 </head>
 <body>
     <div>
-        <h1>Mostrar el índice de ocupación de cada una de las habitaciones del hotel</h1>
-        <h5 th:text="${'Tiempo de carga: '+ tiempo + 's'}"></h5>
+        <h1>Mostrar el consumo en HotelAndes por un cliente, en un rango de fechas indicado</h1>
         <table class="table table-hover table-bordered">
             <thead class="thead-dark">
                 <tr>
-                    <th>Id de habitación</th>
-                    <th>Porcentaje de ocupación</th>
+                    <th>Servicio consumido</th>
+                    <th>Costo del consumo</th>
+                    <th>Descripción del consumo</th>
+                    <th>Fecha de consumo</th>
                 </tr>
             </thead>
             <tbody>
-                <th:block th:each="dato : ${rta}">
+                <th:block th:each="dato : ${consumos}">
                     <tr>
-                        <td th:text="${dato[0]}"></td>
-                        <td th:text="${dato[1] + '%'}"></td>
+                        <td th:text="${dato.servicio.tipo}"></td>
+                        <td th:text="${'$' + dato.servicio.costo}"></td>
+                        <td th:text="${dato.servicio.descripcion}"></td>
+                        <td th:text="${dato.fecha}"></td>
                     </tr>
                 </th:block>
             </tbody>

@@ -17,6 +17,9 @@ public interface ReservaRepository extends MongoRepository<Reserva, String> {
     @Query("{ 'responsable' : ?0 }")
     Reserva findByNumero(Cliente responsable);
 
+    @Query("{ 'responsable.nombre' : ?0 }")
+    Reserva findByNombreCliente(String responsable);
+
     @Query("{}")
     List<Reserva> findAllReservaes();
 

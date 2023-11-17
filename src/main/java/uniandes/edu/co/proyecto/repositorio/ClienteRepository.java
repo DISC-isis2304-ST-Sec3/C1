@@ -19,6 +19,9 @@ public interface ClienteRepository extends MongoRepository<Cliente, String> {
     @Query("{ 'numDocumento' : ?0 }")
     Cliente findByNumero2(int numDoc);
 
+    @Query("{ 'nombre' : ?0 }")
+    Cliente findByNombre(String nombre);
+
     @Query("{}")
     List<Cliente> findAllClientees();
 
