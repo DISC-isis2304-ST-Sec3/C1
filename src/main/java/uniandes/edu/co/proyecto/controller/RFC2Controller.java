@@ -1,6 +1,7 @@
 package uniandes.edu.co.proyecto.controller;
 
 import java.text.DecimalFormat;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -36,9 +37,11 @@ public class RFC2Controller {
                 if (habitacion.isPresent()) {
                     Habitacion hab = habitacion.get();
                     if (map.containsKey(hab.getNumero())) {
-                        map.put(hab.getNumero(), map.get(hab.getNumero()) + 1);
+                        map.put(hab.getNumero(), map.get(hab.getNumero()) + ChronoUnit.DAYS
+                                .between(reserva.getFechaEntrada(), reserva.getFechaSalida()));
                     } else {
-                        map.put(hab.getNumero(), 1.0);
+                        map.put(hab.getNumero(),
+                                (double) ChronoUnit.DAYS.between(reserva.getFechaEntrada(), reserva.getFechaSalida()));
                     }
                 }
 
@@ -48,7 +51,7 @@ public class RFC2Controller {
         List<Object[]> listaRta = new ArrayList<>();
         DecimalFormat formato = new DecimalFormat("#.###");
         for (Integer key : map.keySet()) {
-            listaRta.add(new Object[] { key, formato.format((map.get(key) * 100 / 365)) });
+            listaRta.add(new Object[] { key, formato.format(((map.get(key) / 365) * 100)) });
         }
         model.addAttribute("rta", listaRta);
         return "rfc2";
